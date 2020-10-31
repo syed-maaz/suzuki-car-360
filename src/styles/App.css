@@ -37,12 +37,16 @@ body {
 }
 
 .car {
-  position: absolute;
+  /* position: absolute;
   top: 40%;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 36%;
+  width: 36%; */
+  position: absolute;
+  top: 60%;
+  left: 54%;
+  transform: translate(-50%, -50%);
 }
 .car img {
   width: 100%;
