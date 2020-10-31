@@ -6,18 +6,18 @@ import { loadConfig } from "../crud/loadConfigCrud";
 
 const HomePageComponent = () => {
   const [config, setConfig] = useState();
+
   useEffect(async () => {
     setConfig(await loadConfig());
-
-    console.log(config);
   }, []);
+
   return (
     <>
       <div className="App">
         <div className="bg">
           <CarExteriorComponent />
         </div>
-        <div class="wrapper">
+        <div className="wrapper">
           <BottomNavigationComponent />
         </div>
       </div>
