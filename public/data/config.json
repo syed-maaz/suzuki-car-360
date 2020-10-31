@@ -1,0 +1,12 @@
+{
+    "grade": [
+        {
+            "name": "GL",
+            "folder": "GL base"
+        },
+        {
+            "name": "GLX",
+            "folder": "GLX base"
+        }
+    ]
+}
