@@ -1,44 +1,35 @@
-.App {
-  text-align: center;
+.wrapper {
+  margin: 0 auto;
+  width: 1140px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: #070157;
+  transition: 0.5s ease;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.clear {
+  clear: both;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.alignright {
+  float: right;
+  margin-left: 15px;
+  margin-bottom: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.alignleft {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+strong {
+  font-weight: 600;
 }
-
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  width: 100%;
+}
 .bg {
-  background: url(../images/bg.jpg) no-repeat;
+  background: url("../images/bg.jpg") no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -51,9 +42,138 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 45%;
+  width: 36%;
 }
-
 .car img {
   width: 100%;
+}
+
+.bottom-nav {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  width: 600px;
+  margin: 0 auto;
+}
+.bottom-nav button {
+  padding: 10px 30px;
+  background: rgba(26, 24, 24, 0.8);
+  border-radius: 7px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.bottom-nav button:hover {
+  background: rgba(227, 0, 29, 1);
+  color: #fff;
+}
+.bottom-nav .left {
+  float: left;
+}
+.bottom-nav .right {
+  float: right;
+}
+nav {
+  position: absolute;
+  left: 21%;
+  top: -6px;
+}
+nav ul li {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+nav ul li a {
+  background: #383738 url("../images/icon1.png") no-repeat center center;
+  font-size: 0;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+}
+nav ul li a:hover {
+  background: #fff url("../images/icon1-hover.png") no-repeat center center;
+}
+nav ul li:nth-child(2n) a {
+  background: #383738 url("../images/icon2.png") no-repeat center center;
+}
+nav ul li:nth-child(2n) a:hover {
+  background: #fff url("../images/icon2-hover.png") no-repeat center center;
+}
+nav ul li:nth-child(3n) a {
+  background: #383738 url("../images/icon3.png") no-repeat center center;
+}
+nav ul li:nth-child(3n) a:hover {
+  background: #fff url("../images/icon3-hover.png") no-repeat center center;
+}
+nav ul li:nth-child(4n) a {
+  background: #383738 url("../images/icon4.png") no-repeat center center;
+}
+nav ul li:nth-child(4n) a:hover {
+  background: #fff url("../images/icon4-hover.png") no-repeat center center;
+}
+nav ul li:nth-child(5n) a {
+  background: #383738 url("../images/icon5.png") no-repeat center center;
+}
+nav ul li:nth-child(5n) a:hover {
+  background: #fff url("../images/icon5-hover.png") no-repeat center center;
+}
+nav ul li:nth-child(6n) a {
+  background: #383738 url("../images/icon6.png") no-repeat center center;
+}
+nav ul li:nth-child(6n) a:hover {
+  background: #fff url("../images/icon6-hover.png") no-repeat center center;
+}
+nav ul li:hover .sub-menu {
+  display: block;
+}
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: -70px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  width: auto;
+  text-align: center;
+  border-radius: 10px;
+  left: -30px;
+  white-space: nowrap;
+}
+nav ul li ul::before {
+  content: " ";
+  background: url("../images/arrow.png") no-repeat;
+  position: absolute;
+  top: 46px;
+  width: 27px;
+  height: 25px;
+  left: 40px;
+}
+.sub-menu ul li {
+  display: inline-block;
+  float: none;
+  margin-right: 0;
+}
+.sub-menu ul li:after {
+  content: "|";
+  color: #717070;
+  padding: 0 10px;
+}
+.sub-menu ul li:last-child:after {
+  content: "";
+  padding: 0;
+}
+.sub-menu ul li a {
+  font-size: 15px;
+  color: #717070;
+  width: auto;
+  height: auto;
+  background: none !important;
+  display: inline-block;
+}
+.sub-menu ul li a:hover {
+  color: #e3001d;
+  background: none !important;
 }
