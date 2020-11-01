@@ -35,6 +35,10 @@ const CarExteriorComponent = (props) => {
     const variantFolder = variant.folder;
     const variantName = variant.name;
     const colorFolder = `${variantName}${color.folder}`;
+    const nameExt = "";
+    // if (variantName == 'GLX') {
+    //   nameExt += " 2";
+    // }
     return `images/baleno-items/${variantFolder}/${colorFolder}/${variantName}${color.fileName}${angle}.png`;
   };
 
@@ -53,7 +57,7 @@ const CarExteriorComponent = (props) => {
           min="0"
           max="31"
           value={slider}
-          step="1"
+          step="0"
           onChange={(e) => {
             console.log(e.target.value);
             setSlider(parseInt(e.target.value));
