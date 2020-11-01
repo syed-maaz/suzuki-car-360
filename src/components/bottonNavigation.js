@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { connect } from "react-redux";
 
-const BottomNavigationComponent = () => {
+import {
+  updateVariantAction,
+  updateColorAction,
+  updateWheelAction,
+} from "../redux/carState.reducer";
+
+const BottomNavigationComponent = (props) => {
   const { config } = useSelector((state) => state.config);
 
   const [variants, setVariants] = useState([]);
@@ -31,7 +38,7 @@ const BottomNavigationComponent = () => {
               <ul>
                 {!!variants.length &&
                   variants.map((d, i) => (
-                    <li key={i}>
+                    <li key={i} onClick={(e) => props.updateVariantAction(d)}>
                       <a href="#">{d.name}</a>
                     </li>
                   ))}
@@ -44,7 +51,7 @@ const BottomNavigationComponent = () => {
               <ul>
                 {!!colors.length &&
                   colors.map((d, i) => (
-                    <li key={i}>
+                    <li key={i} onClick={(e) => props.updateColorAction(d)}>
                       <a href="#">{d.name}</a>
                     </li>
                   ))}
@@ -57,7 +64,7 @@ const BottomNavigationComponent = () => {
               <ul>
                 {!!wheels.length &&
                   wheels.map((d, i) => (
-                    <li key={i}>
+                    <li key={i} onClick={(e) => props.updateWheelAction(d)}>
                       <a href="#">{d.name}</a>
                     </li>
                   ))}
@@ -153,4 +160,8 @@ const BottomNavigationComponent = () => {
   );
 };
 
-export default BottomNavigationComponent;
+export default connect(null, {
+  updateVariantAction,
+  updateColorAction,
+  updateWheelAction,
+})(BottomNavigationComponent);
