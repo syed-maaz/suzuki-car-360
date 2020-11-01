@@ -1,19 +1,35 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { shallowEqual, useSelector } from "react-redux";
 
 import CarExteriorComponent from "./carExterior";
 import BottomNavigationComponent from "./bottonNavigation";
 import { loadConfig } from "../crud/loadConfigCrud";
 
-const HomePageComponent = () => {
+// import { decreaseCounter, increaseCounter } from "../redux/test/test.reducer";
+
+import { addConfig } from "../redux/data.reducer";
+
+const HomePageComponent = (props) => {
   const [config, setConfig] = useState();
 
+  const count = useSelector((state) => state.config);
+
   useEffect(async () => {
-    setConfig(await loadConfig());
+    const { data } = await loadConfig();
+    setConfig(data);
   }, []);
+
+  useEffect(async () => {
+    // console.log(config);
+    props.addConfig(config);
+  }, [config]);
 
   return (
     <>
       <div className="App">
+        {/* <div>Count: 0 {count.counter?.count}</div> */}
+
         <div className="bg">
           <CarExteriorComponent />
         </div>
@@ -25,4 +41,4 @@ const HomePageComponent = () => {
   );
 };
 
-export default HomePageComponent;
+export default connect(null, { addConfig })(HomePageComponent);

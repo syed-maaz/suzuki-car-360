@@ -1,5 +1,5 @@
 {
-    "grade": [
+    "variants": [
         {
             "name": "GL",
             "folder": "GL base"
@@ -7,6 +7,71 @@
         {
             "name": "GLX",
             "folder": "GLX base"
+        }
+    ],
+    "colors": [
+        {
+            "name": "Blue",
+            "folder": "_Base_Blue",
+            "fileName": "_BASE _BLUE_000"
+        },
+        {
+            "name": "Granite Gray",
+            "folder": "_Base_Met_Granite_Gray",
+            "fileName": "_BASE _Met Granite Gray_000"
+        },
+        {
+            "name": "Magma Grey",
+            "folder": "_Base_Met.Magma_Grey",
+            "fileName": "_BASE _Met.Magma Grey_000"
+        },
+        {
+            "name": "Premium Silver",
+            "folder": "_Base_Met.Premium_Silver",
+            "fileName": "_BASE _Met.Premium Silver_000"
+        },
+        {
+            "name": "PHOENIX RED",
+            "folder": "_Base_PHOENIX_RED",
+            "fileName": "_BASE _PHOENIX_RED_000"
+        },
+        {
+            "name": "Arctic white",
+            "folder": "_Base_Prl.Arctic_white",
+            "fileName": "_BASE _Prl.Arctic white_000"
+        },
+        {
+            "name": "Midnight Black",
+            "folder": "_Base_Prme_Midnight_Black",
+            "fileName": "_BASE _Prme Midnight Black_000"
+        },
+        {
+            "name": "Fire Red",
+            "folder": "_Base_Sld.Fire_Red",
+            "fileName": "_BASE_Sld.Fire Red_000"
+        },
+        {
+            "name": "White",
+            "folder": "_Base_Sld.White",
+            "fileName": "_BASE_Sld.Fire Red_000"
+        }
+    ],
+    "wheels": [
+        {
+            "name": "Wheel Type 1",
+            "folder": "EXT-WH_001-BG_A"
+        },
+        {
+            "name": "Wheel Type 2",
+            "folder": "EXT-WH_002-BG_A"
+        },
+        {
+            "name": "Wheel Type 3",
+            "folder": "EXT-WH_003-BG_A"
+        },
+        {
+            "name": "Wheel Type 4",
+            "folder": "EXT-WH_004-BG_A"
         }
     ]
 }
