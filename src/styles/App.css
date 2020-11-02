@@ -38,11 +38,11 @@ body {
 
 .car {
   position: absolute;
-  top: 40%;
+  top: 25%;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 36%;
+  width: 770px;
 }
 .car img {
   width: 100%;
@@ -53,7 +53,7 @@ body {
   bottom: 5%;
   left: 0;
   right: 0;
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
 }
 .bottom-nav button {
@@ -176,4 +176,10 @@ nav ul li ul::before {
 .sub-menu ul li a:hover {
   color: #e3001d;
   background: none !important;
+}
+@media only screen and (min-width : 1400px) and (max-width : 3000px) {
+  .car {
+    top: 33%;
+  }
+
 }
