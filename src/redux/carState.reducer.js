@@ -5,6 +5,7 @@ export const UPDATE_VARIANT = "UPDATE_VARIANT";
 export const UPDATE_COLOR = "UPDATE_COLOR";
 export const UPDATE_WHEEL = "UPDATE_WHEEL";
 export const UPDATE_ANGLE = "UPDATE_ANGLE";
+export const TOGGLE_RARE_SPOILER = "TOGGLE_RARE_SPOILER";
 
 /**
  * Actions
@@ -54,6 +55,7 @@ const INITIAL_STATE = {
     name: "Blue",
     folder: "_Base_Blue",
     fileName: "_BASE _BLUE_000",
+    rareWindspoiler: "EXT-A_001-BC_ZYR",
   },
 };
 

@@ -13,47 +13,56 @@
         {
             "name": "Blue",
             "folder": "_Base_Blue",
-            "fileName": "_BASE _BLUE_000"
+            "fileName": "_BASE _BLUE_000",
+            "rareWindspoiler": "EXT-A_001-BC_ZYR"
         },
         {
             "name": "Granite Gray",
             "folder": "_Base_Met_Granite_Gray",
-            "fileName": "_BASE _Met Granite Gray_000"
+            "fileName": "_BASE _Met Granite Gray_000",
+            "rareWindspoiler": "EXT-A_001-BC_ZTN"
         },
         {
             "name": "Magma Grey",
             "folder": "_Base_Met.Magma_Grey",
-            "fileName": "_BASE _Met.Magma Grey_000"
+            "fileName": "_BASE _Met.Magma Grey_000",
+            "rareWindspoiler": "EXT-A_001-BC_Z7Q"
         },
         {
             "name": "Premium Silver",
             "folder": "_Base_Met.Premium_Silver",
-            "fileName": "_BASE _Met.Premium Silver_000"
+            "fileName": "_BASE _Met.Premium Silver_000",
+            "rareWindspoiler": "EXT-A_001-BC_ZTN"
         },
         {
             "name": "PHOENIX RED",
             "folder": "_Base_PHOENIX_RED",
-            "fileName": "_BASE _PHOENIX_RED_000"
+            "fileName": "_BASE _PHOENIX_RED_000",
+            "rareWindspoiler": "EXT-A_001-BC_ZZH"
         },
         {
             "name": "Arctic white",
             "folder": "_Base_Prl.Arctic_white",
-            "fileName": "_BASE _Prl.Arctic white_000"
+            "fileName": "_BASE _Prl.Arctic white_000",
+            "rareWindspoiler": "EXT-A_001-BC_ZHJ"
         },
         {
             "name": "Midnight Black",
             "folder": "_Base_Prme_Midnight_Black",
-            "fileName": "_BASE _Prme Midnight Black_000"
+            "fileName": "_BASE _Prme Midnight Black_000",
+            "rareWindspoiler": "EXT-A_001-BC_Z7Q"
         },
         {
             "name": "Fire Red",
             "folder": "_Base_Sld.Fire_Red",
-            "fileName": "_BASE_Sld.Fire Red_000"
+            "fileName": "_BASE_Sld.Fire Red_000",
+            "rareWindspoiler": "EXT-A_001-BC_Z4Q"
         },
         {
             "name": "White",
             "folder": "_Base_Sld.White",
-            "fileName": "_BASE_Sld.Fire Red_000"
+            "fileName": "_BASE _Sld.White_000",
+            "rareWindspoiler": "EXT-A_001-BC_26U"
         }
     ],
     "wheels": [

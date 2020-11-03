@@ -10,10 +10,16 @@ import {
 
 const BottomNavigationComponent = (props) => {
   const { config } = useSelector((state) => state.config);
+  const { carState } = useSelector((state) => state);
 
   const [variants, setVariants] = useState([]);
   const [colors, setColors] = useState([]);
   const [wheels, setWheels] = useState([]);
+
+  const [cWheel, setCWheel] = useState({});
+  const [cVariant, setCVariant] = useState({});
+  const [cColor, setCColor] = useState({});
+  const [slider, setSlider] = useState({});
 
   useEffect(() => {
     if (!!config && !!config.variants) {
@@ -27,6 +33,18 @@ const BottomNavigationComponent = (props) => {
     }
   }, [config]);
 
+  useEffect(() => {
+    if (!!carState && !!carState.variant) {
+      setCVariant(carState.variant);
+    }
+    if (!!carState && !!carState.color) {
+      setCColor(carState.color);
+    }
+    // if (!!carState && !!carState.wheel) {
+    //   setWheel(carState.wheel);
+    // }
+  }, [carState]);
+
   return (
     <div className="bottom-nav">
       <button className="left">Exterior</button>
@@ -39,6 +57,16 @@ const BottomNavigationComponent = (props) => {
                 {!!variants.length &&
                   variants.map((d, i) => (
                     <li key={i} onClick={(e) => props.updateVariantAction(d)}>
+                      {cVariant.name === d.name ? (
+                        <>
+                          <i
+                            class="fas fa-check-circle"
+                            style={{ color: "green" }}
+                          ></i>{" "}
+                        </>
+                      ) : (
+                        " "
+                      )}
                       <a href="#">{d.name}</a>
                     </li>
                   ))}
@@ -52,6 +80,16 @@ const BottomNavigationComponent = (props) => {
                 {!!colors.length &&
                   colors.map((d, i) => (
                     <li key={i} onClick={(e) => props.updateColorAction(d)}>
+                      {cColor.name === d.name ? (
+                        <>
+                          <i
+                            class="fas fa-check-circle"
+                            style={{ color: "green" }}
+                          ></i>{" "}
+                        </>
+                      ) : (
+                        " "
+                      )}
                       <a href="#">{d.name}</a>
                     </li>
                   ))}
