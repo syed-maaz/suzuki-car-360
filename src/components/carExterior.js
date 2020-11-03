@@ -35,10 +35,7 @@ const CarExteriorComponent = (props) => {
     const variantFolder = variant.folder;
     const variantName = variant.name;
     const colorFolder = `${variantName}${color.folder}`;
-    const nameExt = "";
-    // if (variantName == 'GLX') {
-    //   nameExt += " 2";
-    // }
+
     return `images/baleno-items/${variantFolder}/${colorFolder}/${variantName}${color.fileName}${angle}.png`;
   };
 
@@ -47,6 +44,18 @@ const CarExteriorComponent = (props) => {
     angle = ("0" + angle).slice(-2);
 
     return `images/baleno-items/${wheel.folder}/${wheel.folder}_${angle}.png`;
+  };
+
+  const getShadowtSrc = (angle) => {
+    angle = angle;
+    angle = ("0" + angle).slice(-2);
+
+    return `images/baleno-items/shadow/shadow_000${angle}.png`;
+  };
+
+  const getRareSpoilertSrc = (angle) => {
+    angle = angle + 1;
+    return `images/baleno-items/${color.rareWindspoiler}/${color.rareWindspoiler}_${angle}.png`;
   };
 
   return (
@@ -82,8 +91,27 @@ const CarExteriorComponent = (props) => {
               alt=""
             />
             <img
+              src={getShadowtSrc(i)}
+              z-index="1.5"
+              style={{ position: "absolute", left: "0" }}
+              alt=""
+            />
+            <img
               src={getWheeltSrc(i)}
               z-index="2"
+              style={{ position: "absolute", left: "0" }}
+              alt=""
+            />
+            {/* TODO: add the radio option on bottom images */}
+            <img
+              src={getRareSpoilertSrc(i)}
+              z-index="3"
+              style={{ position: "absolute", left: "0" }}
+              alt=""
+            />
+            <img
+              src="images/baleno-items/EXT-B_001/EXT-B_001_04.png"
+              z-index="4"
               style={{ position: "absolute", left: "0" }}
               alt=""
             />

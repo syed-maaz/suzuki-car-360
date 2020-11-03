@@ -36,6 +36,14 @@ body {
   position: relative;
 }
 
+.icon {
+  background: rgb(241, 235, 241) url("../images/icon-tick.png") no-repeat;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  /* Other styles here */
+}
+
 .car {
   position: absolute;
   top: 25%;
@@ -177,9 +185,9 @@ nav ul li ul::before {
   color: #e3001d;
   background: none !important;
 }
-@media only screen and (min-width : 1400px) and (max-width : 3000px) {
+
+@media only screen and (min-width: 1400px) and (max-width: 3000px) {
   .car {
     top: 33%;
   }
-
 }

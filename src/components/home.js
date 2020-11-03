@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { shallowEqual, useSelector } from "react-redux";
 
 import CarExteriorComponent from "./carExterior";
-import BottomNavigationComponent from "./bottonNavigation";
+import BottomNavigationComponent from "./bottomNavigation";
 import { loadConfig } from "../crud/loadConfigCrud";
 
 // import { decreaseCounter, increaseCounter } from "../redux/test/test.reducer";
