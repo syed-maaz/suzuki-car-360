@@ -31,6 +31,7 @@ body {
 .bg {
   background: url("../images/bg.jpg") no-repeat;
   background-size: cover;
+  /* background-size: 100% auto; */
   width: 100%;
   height: 100vh;
   position: relative;
@@ -51,6 +52,15 @@ body {
   right: 0;
   margin: 0 auto;
   width: 770px;
+
+  position: fixed;
+  top: 29%;
+  left: 50%;
+  /* margin-top: -50px; */
+  /* margin-left: -100px; */
+  /* margin-top: -50px; */
+  /* margin-left: -100px; */
+  transform: translate(-50%, -50%);
 }
 .car img {
   width: 100%;
@@ -61,7 +71,7 @@ body {
   bottom: 5%;
   left: 0;
   right: 0;
-  width: 800px;
+  width: 600px;
   margin: 0 auto;
 }
 .bottom-nav button {
@@ -184,6 +194,105 @@ nav ul li ul::before {
 .sub-menu ul li a:hover {
   color: #e3001d;
   background: none !important;
+}
+
+.slider input {
+  display: block;
+  margin: 0 auto;
+}
+
+input[type="range"] {
+  height: 0;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  background-color: transparent;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071a9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #3071a9;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #3071a9;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  /* background: #ffffff; */
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #3071a9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #3071a9;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  /* background: #ffffff; */
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  /* background: #3071a9; */
 }
 
 @media only screen and (min-width: 1400px) and (max-width: 3000px) {

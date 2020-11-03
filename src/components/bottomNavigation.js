@@ -6,6 +6,11 @@ import {
   updateVariantAction,
   updateColorAction,
   updateWheelAction,
+  updateRareUpperSpoiler,
+  updateRareUnderSpoiler,
+  updateSideSpoiler,
+  updateFrontSpoiler,
+  updateOtherOptions,
 } from "../redux/carState.reducer";
 
 const BottomNavigationComponent = (props) => {
@@ -15,11 +20,17 @@ const BottomNavigationComponent = (props) => {
   const [variants, setVariants] = useState([]);
   const [colors, setColors] = useState([]);
   const [wheels, setWheels] = useState([]);
+  const [otherOptions, setOtherOptions] = useState([]);
+
+  const [rareUpperSpoiler, setRareUpperSpoiler] = useState(false);
+  const [rareUnderSpoiler, setRareUnderSpoiler] = useState(false);
+  const [sideSpoiler, setSideSpoiler] = useState(false);
+  const [frontSpoiler, setFrontSpoiler] = useState(false);
 
   const [cWheel, setCWheel] = useState({});
   const [cVariant, setCVariant] = useState({});
   const [cColor, setCColor] = useState({});
-  const [slider, setSlider] = useState({});
+  const [cOther, setCOther] = useState({});
 
   useEffect(() => {
     if (!!config && !!config.variants) {
@@ -31,19 +42,46 @@ const BottomNavigationComponent = (props) => {
     if (!!config && !!config.wheels) {
       setWheels(config.wheels);
     }
+    if (!!config && !!config.otherOptions) {
+      setOtherOptions(config.otherOptions);
+    }
   }, [config]);
 
   useEffect(() => {
-    if (!!carState && !!carState.variant) {
-      setCVariant(carState.variant);
+    if (!!carState) {
+      if (!!carState.variant) {
+        setCVariant(carState.variant);
+      }
+      if (!!carState.color) {
+        setCColor(carState.color);
+      }
+      if (!!carState.wheel) {
+        setCWheel(carState.wheel);
+      }
+      if (!!carState.otherOptions) {
+        setCOther(carState.otherOptions);
+      }
+
+      setRareUpperSpoiler(carState.rareUpperSpoiler);
+      setRareUnderSpoiler(carState.rareUnderSpoiler);
+      setFrontSpoiler(carState.frontSpoiler);
+      setSideSpoiler(carState.sideSpoiler);
     }
-    if (!!carState && !!carState.color) {
-      setCColor(carState.color);
-    }
-    // if (!!carState && !!carState.wheel) {
-    //   setWheel(carState.wheel);
-    // }
   }, [carState]);
+
+  const updateOtherOptions = (op) => {
+    if (!!cOther[op.name]) {
+      delete cOther[op.name];
+    } else {
+      cOther[op.name] = op;
+    }
+
+    props.updateOtherOptions(cOther);
+  };
+
+  const isOptionActive = (name) => {
+    return !!cOther[name];
+  };
 
   return (
     <div className="bottom-nav">
@@ -60,7 +98,7 @@ const BottomNavigationComponent = (props) => {
                       {cVariant.name === d.name ? (
                         <>
                           <i
-                            class="fas fa-check-circle"
+                            className="fas fa-check-circle"
                             style={{ color: "green" }}
                           ></i>{" "}
                         </>
@@ -83,7 +121,7 @@ const BottomNavigationComponent = (props) => {
                       {cColor.name === d.name ? (
                         <>
                           <i
-                            class="fas fa-check-circle"
+                            className="fas fa-check-circle"
                             style={{ color: "green" }}
                           ></i>{" "}
                         </>
@@ -103,24 +141,114 @@ const BottomNavigationComponent = (props) => {
                 {!!wheels.length &&
                   wheels.map((d, i) => (
                     <li key={i} onClick={(e) => props.updateWheelAction(d)}>
+                      {cWheel.name === d.name ? (
+                        <>
+                          <i
+                            className="fas fa-check-circle"
+                            style={{ color: "green" }}
+                          ></i>{" "}
+                        </>
+                      ) : (
+                        " "
+                      )}
                       <a href="#">{d.name}</a>
                     </li>
                   ))}
               </ul>
             </div>
           </li>
+          {/* Spoilers */}
           <li>
             <a href="#">Setting</a>
             <div className="sub-menu">
               <ul>
+                {/* Front Under Spoiler */}
                 <li>
-                  <a href="#">Front Under Spoiler</a>
+                  {frontSpoiler ? (
+                    <>
+                      <i
+                        className="fas fa-check-circle"
+                        style={{ color: "green" }}
+                      ></i>{" "}
+                    </>
+                  ) : (
+                    " "
+                  )}
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      props.updateFrontSpoiler(!frontSpoiler);
+                      e.preventDefault();
+                    }}
+                  >
+                    Front Under Spoiler
+                  </a>
                 </li>
+                {/* Side Under Spoiler */}
                 <li>
-                  <a href="#">Side Under Spoiler</a>
+                  {sideSpoiler ? (
+                    <>
+                      <i
+                        className="fas fa-check-circle"
+                        style={{ color: "green" }}
+                      ></i>{" "}
+                    </>
+                  ) : (
+                    " "
+                  )}
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      props.updateSideSpoiler(!sideSpoiler);
+                      e.preventDefault();
+                    }}
+                  >
+                    Side Under Spoiler
+                  </a>
                 </li>
+                {/* Rare View Spoiler */}
                 <li>
-                  <a href="#">Rear Under Spoiler</a>
+                  {rareUpperSpoiler ? (
+                    <>
+                      <i
+                        className="fas fa-check-circle"
+                        style={{ color: "green" }}
+                      ></i>{" "}
+                    </>
+                  ) : (
+                    " "
+                  )}
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      props.updateRareUpperSpoiler(!rareUpperSpoiler);
+                      e.preventDefault();
+                    }}
+                  >
+                    Rear Upper Spoiler
+                  </a>
+                </li>
+                {/* Rare Under Spoiler */}
+                <li>
+                  {rareUnderSpoiler ? (
+                    <>
+                      <i
+                        className="fas fa-check-circle"
+                        style={{ color: "green" }}
+                      ></i>{" "}
+                    </>
+                  ) : (
+                    " "
+                  )}
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      props.updateRareUnderSpoiler(!rareUnderSpoiler);
+                      e.preventDefault();
+                    }}
+                  >
+                    Rear Under Spoiler
+                  </a>
                 </li>
               </ul>
             </div>
@@ -129,63 +257,22 @@ const BottomNavigationComponent = (props) => {
             <a href="#">Setting</a>
             <div className="sub-menu">
               <ul>
-                <li>
-                  <a href="#">Front Under Spoiler</a>
-                </li>
-                <li>
-                  <a href="#">Side Under Spoiler</a>
-                </li>
-                <li>
-                  <a href="#">Rear Under Spoiler</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#">Calender</a>
-            <div className="sub-menu">
-              <ul>
-                <li>
-                  <a href="#">Option 1</a>
-                </li>
-                <li>
-                  <a href="#">Option 2</a>
-                </li>
-                <li>
-                  <a href="#">Option 3</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#">View</a>
-            <div className="sub-menu">
-              <ul>
-                <li>
-                  <a href="#">Option 1</a>
-                </li>
-                <li>
-                  <a href="#">Option 2</a>
-                </li>
-                <li>
-                  <a href="#">Option 3</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#">Calculator</a>
-            <div className="sub-menu">
-              <ul>
-                <li>
-                  <a href="#">Option 1</a>
-                </li>
-                <li>
-                  <a href="#">Option 2</a>
-                </li>
-                <li>
-                  <a href="#">Option 3</a>
-                </li>
+                {!!otherOptions.length &&
+                  otherOptions.map((d, i) => (
+                    <li key={i} onClick={(e) => updateOtherOptions(d)}>
+                      {isOptionActive(d.name) ? (
+                        <>
+                          <i
+                            className="fas fa-check-circle"
+                            style={{ color: "green" }}
+                          ></i>{" "}
+                        </>
+                      ) : (
+                        " "
+                      )}
+                      <a href="#">{d.name}</a>
+                    </li>
+                  ))}
               </ul>
             </div>
           </li>
@@ -202,4 +289,9 @@ export default connect(null, {
   updateVariantAction,
   updateColorAction,
   updateWheelAction,
+  updateRareUpperSpoiler,
+  updateRareUnderSpoiler,
+  updateSideSpoiler,
+  updateFrontSpoiler,
+  updateOtherOptions,
 })(BottomNavigationComponent);
