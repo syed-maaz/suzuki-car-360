@@ -5,7 +5,11 @@ export const UPDATE_VARIANT = "UPDATE_VARIANT";
 export const UPDATE_COLOR = "UPDATE_COLOR";
 export const UPDATE_WHEEL = "UPDATE_WHEEL";
 export const UPDATE_ANGLE = "UPDATE_ANGLE";
-export const TOGGLE_RARE_SPOILER = "TOGGLE_RARE_SPOILER";
+export const UPDATE_RARE_UPPER_SPOILER = "UPDATE_RARE_UPPER_SPOILER";
+export const UPDATE_RARE_UNDER_SPOILER = "UPDATE_RARE_UNDER_SPOILER";
+export const UPDATE_SIDE_SPOILER = "UPDATE_SIDE_SPOILER";
+export const UPDATE_FRONT_SPOILER = "UPDATE_FRONT_SPOILER";
+export const UPDATE_OTHER_OPTION = "UPDATE_FRONT_SPOILER";
 
 /**
  * Actions
@@ -38,6 +42,41 @@ export const updateangleAction = (config) => {
   };
 };
 
+export const updateRareUpperSpoiler = (config) => {
+  return {
+    type: UPDATE_RARE_UPPER_SPOILER,
+    value: config,
+  };
+};
+
+export const updateRareUnderSpoiler = (config) => {
+  return {
+    type: UPDATE_RARE_UNDER_SPOILER,
+    value: config,
+  };
+};
+
+export const updateSideSpoiler = (config) => {
+  return {
+    type: UPDATE_SIDE_SPOILER,
+    value: config,
+  };
+};
+
+export const updateFrontSpoiler = (config) => {
+  return {
+    type: UPDATE_FRONT_SPOILER,
+    value: config,
+  };
+};
+
+export const updateOtherOptions = (config) => {
+  return {
+    type: UPDATE_OTHER_OPTION,
+    value: config,
+  };
+};
+
 /**
  * Initial State
  */
@@ -55,8 +94,17 @@ const INITIAL_STATE = {
     name: "Blue",
     folder: "_Base_Blue",
     fileName: "_BASE _BLUE_000",
-    rareWindspoiler: "EXT-A_001-BC_ZYR",
+    rareUpperSpoilerFolder: "EXT-A_001-BC_ZYR",
+    rareUnderSpoilerFolder: "EXT-L_001-BC_ZYR",
+    sideSpoilerFolder: "EXT-K_001-BC_ZYR",
+    frontSpoilerFolder: "EXT-J_001-BC_ZYR",
+    parkingSensor: "EXT-H_001-BC_ZYR",
   },
+  rareUpperSpoiler: false,
+  rareUnderSpoiler: false,
+  sideSpoiler: false,
+  frontSpoiler: false,
+  otherOptions: {},
 };
 
 /**
@@ -85,10 +133,40 @@ const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case UPDATE_ANGLE:
-      console.log("wah awh");
       return {
         ...state,
         angle: action.value,
+      };
+
+    case UPDATE_RARE_UPPER_SPOILER:
+      return {
+        ...state,
+        rareUpperSpoiler: action.value,
+      };
+
+    case UPDATE_RARE_UNDER_SPOILER:
+      return {
+        ...state,
+        rareUnderSpoiler: action.value,
+      };
+
+    case UPDATE_SIDE_SPOILER:
+      console.log(action.value);
+      return {
+        ...state,
+        sideSpoiler: action.value,
+      };
+
+    case UPDATE_FRONT_SPOILER:
+      return {
+        ...state,
+        frontSpoiler: action.value,
+      };
+
+    case UPDATE_OTHER_OPTION:
+      return {
+        ...state,
+        otherOptions: action.value,
       };
 
     default:
