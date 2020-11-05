@@ -15,6 +15,7 @@ import {
 
 import { Modal, Header, Title, Body, Footer, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Iframe from 'react-iframe'
 
 const BottomNavigationComponent = (props) => {
   const { config } = useSelector((state) => state.config);
@@ -93,11 +94,21 @@ const BottomNavigationComponent = (props) => {
 
   return (
     <div className="bottom-nav">
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Interior</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <Iframe
+            url="http://suzuki-360-1100.surge.sh/"
+            width="100%"
+            height="600px"
+            id="myId"
+            className="myClassname"
+            display="initial"
+            position="relative"
+          />
+        </Modal.Body>
       </Modal>
       <button className="left">Exterior</button>
       <nav>
