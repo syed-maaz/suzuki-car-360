@@ -13,6 +13,9 @@ import {
   updateOtherOptions,
 } from "../redux/carState.reducer";
 
+import { Modal, Header, Title, Body, Footer, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const BottomNavigationComponent = (props) => {
   const { config } = useSelector((state) => state.config);
   const { carState } = useSelector((state) => state);
@@ -31,6 +34,11 @@ const BottomNavigationComponent = (props) => {
   const [cVariant, setCVariant] = useState({});
   const [cColor, setCColor] = useState({});
   const [cOther, setCOther] = useState({});
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     if (!!config && !!config.variants) {
@@ -85,6 +93,12 @@ const BottomNavigationComponent = (props) => {
 
   return (
     <div className="bottom-nav">
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Interior</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+      </Modal>
       <button className="left">Exterior</button>
       <nav>
         <ul>
@@ -279,7 +293,7 @@ const BottomNavigationComponent = (props) => {
         </ul>
         <div className="clear"></div>
       </nav>
-      <button className="right">Interior</button>
+      <button className="right" onClick={handleShow}>Interior</button>
       <div className="clear"></div>
     </div>
   );
