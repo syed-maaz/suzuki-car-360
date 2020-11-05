@@ -13,9 +13,9 @@ import {
   updateOtherOptions,
 } from "../redux/carState.reducer";
 
-import { Modal, Header, Title, Body, Footer, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Iframe from 'react-iframe'
+import { Modal, Header, Title, Body, Footer, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Iframe from "react-iframe";
 
 const BottomNavigationComponent = (props) => {
   const { config } = useSelector((state) => state.config);
@@ -279,7 +279,7 @@ const BottomNavigationComponent = (props) => {
             </div>
           </li>
           <li className="fifthchild">
-            <a href="#">Setting</a>
+            <a href="#">Other Options</a>
             <div className="sub-menu">
               <ul>
                 {!!otherOptions.length &&
@@ -295,7 +295,14 @@ const BottomNavigationComponent = (props) => {
                       ) : (
                         " "
                       )}
-                      <a href="#">{d.name}</a>
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                        }}
+                      >
+                        {d.name}
+                      </a>
                     </li>
                   ))}
               </ul>
@@ -304,7 +311,9 @@ const BottomNavigationComponent = (props) => {
         </ul>
         <div className="clear"></div>
       </nav>
-      <button className="right" onClick={handleShow}>Interior</button>
+      <button className="right" onClick={handleShow}>
+        Interior
+      </button>
       <div className="clear"></div>
     </div>
   );
