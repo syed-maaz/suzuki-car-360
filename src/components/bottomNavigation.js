@@ -111,7 +111,7 @@ const BottomNavigationComponent = (props) => {
               </ul>
             </div>
           </li>
-          <li>
+          <li className="thirdchild">
             <a href="#">Spray</a>
             <div className="sub-menu">
               <ul>
@@ -253,7 +253,7 @@ const BottomNavigationComponent = (props) => {
               </ul>
             </div>
           </li>
-          <li>
+          <li className="fifthchild">
             <a href="#">Setting</a>
             <div className="sub-menu">
               <ul>

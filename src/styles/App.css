@@ -63,7 +63,7 @@ body {
   transform: translate(-50%, -50%);
 }
 .car img {
-  width: 100%;
+  width: 80%;
 }
 
 .bottom-nav {
@@ -71,7 +71,7 @@ body {
   bottom: 5%;
   left: 0;
   right: 0;
-  width: 600px;
+  width: 540px;
   margin: 0 auto;
 }
 .bottom-nav button {
@@ -101,7 +101,7 @@ nav {
 nav ul li {
   position: relative;
   float: left;
-  margin-right: 10px;
+  margin-left: 11px;
 }
 nav ul li a {
   background: #383738 url("../images/icon1.png") no-repeat center center;
@@ -147,6 +147,22 @@ nav ul li:nth-child(6n) a:hover {
 }
 nav ul li:hover .sub-menu {
   display: block;
+}
+.fifthchild .sub-menu {
+  left: -410px;
+}
+nav ul li.fifthchild ul::before {
+  left: 0;
+  right: 10%;
+  margin: 0 auto;
+}
+.thirdchild .sub-menu {
+  left: -410px;
+}
+nav ul li.thirdchild ul::before {
+  left: 0;
+  right: 11%;
+  margin: 0 auto;
 }
 .sub-menu {
   display: none;
