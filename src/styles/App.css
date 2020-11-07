@@ -48,19 +48,10 @@ body {
 .car {
   position: absolute;
   top: 25%;
-  left: 0;
-  right: 0;
   margin: 0 auto;
-  width: 770px;
-
-  position: fixed;
-  top: 29%;
   left: 50%;
-  /* margin-top: -50px; */
-  /* margin-left: -100px; */
-  /* margin-top: -50px; */
-  /* margin-left: -100px; */
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50% + 80px),calc(-50% - 14px));
+  right: 0;
 }
 .car img {
   width: 80%;
