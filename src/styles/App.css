@@ -50,7 +50,7 @@ body {
   top: 25%;
   margin: 0 auto;
   left: 50%;
-  transform: translate(calc(-50% + 80px),calc(-50% - 14px));
+  transform: translate(calc(-50% + 80px), calc(-50% - 14px));
   right: 0;
 }
 .car img {
@@ -209,9 +209,12 @@ nav ul li ul::before {
 }
 
 .car .car-box .image-loading {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
+  height: 350px;
+  background: white url("../images/loading-car.gif") center center no-repeat;
+  z-index: 999;
+  opacity: 0.5;
 }
 
 .car .car-box img {
