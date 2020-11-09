@@ -140,11 +140,11 @@ nav ul li:hover .sub-menu {
   display: block;
 }
 .fifthchild .sub-menu {
-  left: -410px;
+  left: -440px;
 }
 nav ul li.fifthchild ul::before {
   left: 0;
-  right: 10%;
+  right: 11.5%;
   margin: 0 auto;
 }
 .thirdchild .sub-menu {
@@ -152,7 +152,7 @@ nav ul li.fifthchild ul::before {
 }
 nav ul li.thirdchild ul::before {
   left: 0;
-  right: 11%;
+  right: 16%;
   margin: 0 auto;
 }
 .sub-menu {
