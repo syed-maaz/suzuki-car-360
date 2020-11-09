@@ -6,8 +6,6 @@ import CarExteriorComponent from "./carExterior";
 import BottomNavigationComponent from "./bottomNavigation";
 import { loadConfig } from "../crud/loadConfigCrud";
 
-// import { decreaseCounter, increaseCounter } from "../redux/test/test.reducer";
-
 import { addConfig } from "../redux/data.reducer";
 
 const HomePageComponent = (props) => {
@@ -28,8 +26,6 @@ const HomePageComponent = (props) => {
   return (
     <>
       <div className="App">
-        {/* <div>Count: 0 {count.counter?.count}</div> */}
-
         <div className="bg">
           <CarExteriorComponent />
         </div>

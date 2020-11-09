@@ -1,12 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
-const usePrevious = (value) => {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  });
-  return ref.current;
-};
+import ImageTag from "./imageTag";
+
+import { ImageLoadContext } from "../contexts/imageLoaderContext";
 
 const ImageRendererComponent = (props) => {
   const {
@@ -23,9 +19,39 @@ const ImageRendererComponent = (props) => {
     activeNumOfParts,
   } = props;
 
-  const prevAmount = usePrevious(props);
-
   const [loadedNumComp, setLoadedNumComp] = useState(0);
+
+  const [loadState, setLoadState] = useContext(ImageLoadContext);
+
+  const [isVariantLoading, setIsVariantLoading] = useState(false);
+  const [isWheelLoading, setIsWheelLoading] = useState(false);
+
+  useEffect(() => {
+    console.log("loadState", loadState);
+  }, [loadState]);
+
+  useEffect(() => {
+    if (variant) {
+      setIsVariantLoading(true);
+    }
+  }, [variant, color]);
+
+  useEffect(() => {
+    if (variant) {
+      setIsWheelLoading(true);
+    }
+  }, [wheel]);
+
+  // useEffect(() => {
+  //   console.log(activeNumOfParts);
+  //   if (!prevProps) return;
+  //   if (
+  //     activeNumOfParts > 0 &&
+  //     prevProps.activeNumOfParts !== activeNumOfParts
+  //   ) {
+  //     setLoadedNumComp(activeNumOfParts);
+  //   }
+  // }, [activeNumOfParts]);
 
   const getVariantSrc = (angle) => {
     angle = ("0" + angle).slice(-2);
@@ -46,13 +72,13 @@ const ImageRendererComponent = (props) => {
   const getShadowtSrc = (angle) => {
     angle = angle;
     angle = ("0" + angle).slice(-2);
-
     return `images/baleno-items/shadow/shadow_000${angle}.png`;
   };
 
   const getRareSpoilertSrc = (angle) => {
     angle = angle + 1;
     angle = ("0" + angle).slice(-2);
+
     return `images/baleno-items/${color.rareUpperSpoilerFolder}/${color.rareUpperSpoilerFolder}_${angle}.png`;
   };
 
@@ -102,24 +128,19 @@ const ImageRendererComponent = (props) => {
         display: angle === i ? "" : "none",
       }}
     >
-      {/* {activeNumOfParts !== loadedNumComp ? (
+      {isVariantLoading || isWheelLoading ? (
         <div className="image-loading"></div>
       ) : (
         ""
       )}
-      {activeNumOfParts}, {loadedNumComp} */}
-      <img
-        src={getVariantSrc(i)}
-        onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
-      />
+
+      <img src={getVariantSrc(i)} onLoad={(e) => setIsVariantLoading(false)} />
+      {/* <ImageTag imgSrc={getVariantSrc(i)}></ImageTag> */}
       <img
         src={getShadowtSrc(i)}
         onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
       />
-      <img
-        src={getWheeltSrc(i)}
-        onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
-      />
+      <img src={getWheeltSrc(i)} onLoad={(e) => setIsWheelLoading(false)} />
       {!!rareUpperSpoiler ? (
         <img
           src={getRareSpoilertSrc(i)}
@@ -139,7 +160,7 @@ const ImageRendererComponent = (props) => {
       {!!sideSpoiler ? (
         <img
           src={getSideSpoilertSrc(i)}
-          onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
+          onLoad={(e) => setLoadedNumComp(false)}
         />
       ) : (
         " "
@@ -147,7 +168,7 @@ const ImageRendererComponent = (props) => {
       {!!frontSpoiler ? (
         <img
           src={getFrontSpoilertSrc(i)}
-          onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
+          onLoad={(e) => setLoadedNumComp(false)}
         />
       ) : (
         " "

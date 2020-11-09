@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import { connect } from "react-redux";
 
 import ImageRendererComponent from "./imageRenderer";
-
 import { updateangleAction } from "../redux/carState.reducer";
+
+import { ImageLoadProvider } from "../contexts/imageLoaderContext";
 
 const CarExteriorComponent = (props) => {
   const { carState } = useSelector((state) => state);
@@ -92,7 +93,7 @@ const CarExteriorComponent = (props) => {
   const handleMouseMove = (e) => {
     e.preventDefault();
     if (isRotateActive) {
-      if (e.pageX % 2) return;
+      if (e.pageX % 5 != 0) return;
       let nAngle = 0;
       if (e.pageX > prevPosX) {
         nAngle = parseInt(angle) + 1 > totalAngle - 1 ? 0 : parseInt(angle) + 1;
@@ -107,7 +108,7 @@ const CarExteriorComponent = (props) => {
   };
 
   return (
-    <>
+    <ImageLoadProvider>
       <div
         className="car"
         onMouseDown={handleMouseDown}
@@ -134,7 +135,7 @@ const CarExteriorComponent = (props) => {
           />
         ))}
       </div>
-    </>
+    </ImageLoadProvider>
   );
 };
 
