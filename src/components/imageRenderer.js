@@ -123,7 +123,7 @@ const ImageRendererComponent = (props) => {
   };
   return (
     <div
-      className="car-box w-1/2 h-1/2 relative bg-red-300"
+      className="car-box w-1/2 h-1/2 relative"
       style={{
         display: angle === i ? "" : "none",
       }}
