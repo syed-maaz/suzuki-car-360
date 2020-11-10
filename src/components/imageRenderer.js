@@ -117,7 +117,9 @@ const ImageRendererComponent = (props) => {
           const folder = otherOptions[item].folder;
           src = `images/baleno-items/${folder}/${folder}_${an}.png`;
         }
-        return <img key={i} src={src} />;
+        return (
+          <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
+        );
       });
     }
   };
@@ -134,14 +136,22 @@ const ImageRendererComponent = (props) => {
         ""
       )}
 
-      <img src={getVariantSrc(i)} onLoad={(e) => setIsVariantLoading(false)} className="w-full absolute left-0 bottom-0" />
+      <img
+        src={getVariantSrc(i)}
+        onLoad={(e) => setIsVariantLoading(false)}
+        className="w-full absolute left-0 bottom-0"
+      />
       {/* <ImageTag imgSrc={getVariantSrc(i)}></ImageTag> */}
       <img
         src={getShadowtSrc(i)}
         onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
         className="w-full absolute left-0 bottom-0"
       />
-      <img src={getWheeltSrc(i)} onLoad={(e) => setIsWheelLoading(false)} className="w-full absolute left-0 bottom-0" />
+      <img
+        src={getWheeltSrc(i)}
+        onLoad={(e) => setIsWheelLoading(false)}
+        className="w-full absolute left-0 bottom-0"
+      />
       {!!rareUpperSpoiler ? (
         <img
           src={getRareSpoilertSrc(i)}
