@@ -310,7 +310,7 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <button class="right h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300" onClick={handleShow}>Exterior</button>
+          <button class="right h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300" onClick={handleShow}>Interior</button>
         </li>
       </ul>
     </nav>
