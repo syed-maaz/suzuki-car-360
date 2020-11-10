@@ -28,8 +28,8 @@ const HomePageComponent = (props) => {
   return (
     <>
       <div className="App">
-        <div className="wrapper relative">
-          <div className="bg">
+        <div className="bg">
+          <div className="wrapper relative">
             <img src={backgroundImg} className="w-full" alt="cover" />
             <div class="absolute inset-0">
               <CarExteriorComponent />
