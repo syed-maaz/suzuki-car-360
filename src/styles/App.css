@@ -1,229 +1,224 @@
 .wrapper {
-  margin: 0 auto;
-  width: 1140px;
+    /* margin: 0 auto; */
+    /* width: 1140px; */
 }
 a {
-  text-decoration: none;
-  color: #070157;
-  transition: 0.5s ease;
+    text-decoration: none;
+    color: #070157;
+    transition: 0.5s ease;
 }
 .clear {
-  clear: both;
+    clear: both;
 }
 .alignright {
-  float: right;
-  margin-left: 15px;
-  margin-bottom: 10px;
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 .alignleft {
-  float: left;
-  margin-right: 15px;
-  margin-bottom: 10px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
 }
-strong {
-  font-weight: 600;
+strong{
+    font-weight: 600;
 }
 body {
-  font-family: "Roboto", sans-serif;
-  height: 100%;
-  width: 100%;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
 }
 .bg {
-  background: url("../images/bg.jpg") no-repeat;
-  background-size: 100% 100%;
-  /* background-size: 100% auto; */
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-.icon {
-  background: rgb(241, 235, 241) url("../images/icon-tick.png") no-repeat;
-  height: 20px;
-  width: 20px;
-  display: inline-block;
-  /* Other styles here */
+    /* background: url('../images/bg.jpg')no-repeat; */
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
 }
 
 .car {
-  position: absolute;
-  top: 25%;
-  margin: 0 auto;
-  left: 50%;
-  transform: translate(calc(-50% + 80px), calc(-50% - 14px));
-  right: 0;
+    /* position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 36%; */
 }
-.car img {
-  width: 80%;
+.car img{
+    /* width: 100%; */
+}
+
+
+.car-box {
+    margin-bottom: 10%;
+}
+.car-box img {
 }
 
 .bottom-nav {
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-  right: 0;
-  width: 540px;
-  margin: 0 auto;
+    /* position: absolute; */
+    /* bottom: 5%; */
+    left: 0;
+    right: 0;
+    width: 600px;
+    margin: 0 auto;
 }
-.bottom-nav button {
-  padding: 10px 30px;
-  background: rgba(26, 24, 24, 0.8);
-  border-radius: 7px;
-  color: #fff;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.bottom-nav-button{
+    padding: 10px 30px;
+    background: rgba(26,24,24,0.8);
+    border-radius: 7px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    height: 50px;
 }
-.bottom-nav button:hover {
-  background: rgba(227, 0, 29, 1);
-  color: #fff;
+.bottom-nav-button:hover{
+    background: rgba(227,0,29,1);
+    color: #fff;
 }
-.bottom-nav .left {
-  float: left;
+.bottom-nav .left{
+    float: left;
 }
-.bottom-nav .right {
-  float: right;
+.bottom-nav .right{
+    float: right;
 }
 nav {
-  position: absolute;
-  left: 21%;
-  top: -6px;
+    /* position: absolute;
+    left: 21%;
+    top: -6px; */
 }
-nav ul li {
-  position: relative;
-  float: left;
-  margin-left: 11px;
+nav ul li{
+    position: relative;
+    float: left;
+    margin-right: 10px;
 }
-nav ul li a {
-  background: #383738 url("../images/icon1.png") no-repeat center center;
-  font-size: 0;
-  display: block;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 5px;
+nav ul li a{
+    background: #383738 url("../images/icon1.png")no-repeat center center;
+    font-size: 0;
+    display: block;
+    width: 50px;
+    text-align: center;
 }
-nav ul li a:hover {
-  background: #fff url("../images/icon1-hover.png") no-repeat center center;
+nav ul li a:hover{
+    background: #fff url("../images/icon1-hover.png")no-repeat center center;
 }
-nav ul li:nth-child(2n) a {
-  background: #383738 url("../images/icon2.png") no-repeat center center;
+nav ul li:nth-child(2n) a{
+    background: #383738 url("../images/icon2.png")no-repeat center center;
 }
-nav ul li:nth-child(2n) a:hover {
-  background: #fff url("../images/icon2-hover.png") no-repeat center center;
+nav ul li:nth-child(2n) a:hover{
+    background: #fff url("../images/icon2-hover.png")no-repeat center center;
 }
-nav ul li:nth-child(3n) a {
-  background: #383738 url("../images/icon3.png") no-repeat center center;
+nav ul li:nth-child(3n) a{
+    background: #383738 url("../images/icon3.png")no-repeat center center;
 }
-nav ul li:nth-child(3n) a:hover {
-  background: #fff url("../images/icon3-hover.png") no-repeat center center;
+nav ul li:nth-child(3n) a:hover{
+    background: #fff url("../images/icon3-hover.png")no-repeat center center;
 }
-nav ul li:nth-child(4n) a {
-  background: #383738 url("../images/icon4.png") no-repeat center center;
+nav ul li:nth-child(4n) a{
+    background: #383738 url("../images/icon4.png")no-repeat center center;
 }
-nav ul li:nth-child(4n) a:hover {
-  background: #fff url("../images/icon4-hover.png") no-repeat center center;
+nav ul li:nth-child(4n) a:hover{
+    background: #fff url("../images/icon4-hover.png")no-repeat center center;
 }
-nav ul li:nth-child(5n) a {
-  background: #383738 url("../images/icon5.png") no-repeat center center;
+nav ul li:nth-child(5n) a{
+    background: #383738 url("../images/icon5.png")no-repeat center center;
 }
-nav ul li:nth-child(5n) a:hover {
-  background: #fff url("../images/icon5-hover.png") no-repeat center center;
+nav ul li:nth-child(5n) a:hover{
+    background: #fff url("../images/icon5-hover.png")no-repeat center center;
 }
-nav ul li:nth-child(6n) a {
-  background: #383738 url("../images/icon6.png") no-repeat center center;
+nav ul li:nth-child(6n) a{
+    background: #383738 url("../images/icon6.png")no-repeat center center;
 }
-nav ul li:nth-child(6n) a:hover {
-  background: #fff url("../images/icon6-hover.png") no-repeat center center;
+nav ul li:nth-child(6n) a:hover{
+    background: #fff url("../images/icon6-hover.png")no-repeat center center;
 }
-nav ul li:hover .sub-menu {
-  display: block;
+nav ul li:hover .sub-menu{
+    display: block;
 }
-.fifthchild .sub-menu {
-  left: -440px;
+.sub-menu{
+    display: none;
+    position: absolute;
+    top: -70px;
+    padding: 15px;
+    background: rgba(255,255,255,0.8);
+    width: auto;
+    text-align: center;
+    border-radius: 10px;
+    left: -30px;
+    white-space: nowrap;
 }
-nav ul li.fifthchild ul::before {
+nav ul li ul::before{
+    content: " ";
+    background: url("../images/arrow.png")no-repeat;
+    position: absolute;
+    top: 46px;
+    width: 27px;
+    height: 25px;
+    left: 40px;
+}
+.sub-menu ul li{
+    display: inline-block;
+    float: none;
+    margin-right: 0;
+}
+.sub-menu ul li:after{
+    content:"|";
+    color: #717070;
+    padding: 0 10px;
+}
+.sub-menu ul li:last-child:after{
+    content:"";
+    padding: 0;
+}
+.sub-menu ul li a{
+    font-size: 15px;
+    color: #717070;
+    width: auto;
+    height: auto;
+    background: none!important;
+    display: inline-block;
+}
+.sub-menu ul li a:hover{
+    color: #e3001d;
+    background: none!important;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
   left: 0;
-  right: 11.5%;
-  margin: 0 auto;
-}
-.thirdchild .sub-menu {
-  left: -410px;
-}
-nav ul li.thirdchild ul::before {
-  left: 0;
-  right: 16%;
-  margin: 0 auto;
-}
-.sub-menu {
-  display: none;
-  position: absolute;
-  top: -70px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.8);
-  width: auto;
-  text-align: center;
-  border-radius: 10px;
-  left: -30px;
-  white-space: nowrap;
-}
-nav ul li ul::before {
-  content: " ";
-  background: url("../images/arrow.png") no-repeat;
-  position: absolute;
-  top: 46px;
-  width: 27px;
-  height: 25px;
-  left: 40px;
-}
-.sub-menu ul li {
-  display: inline-block;
-  float: none;
-  margin-right: 0;
-}
-.sub-menu ul li:after {
-  content: "|";
-  color: #717070;
-  padding: 0 10px;
-}
-.sub-menu ul li:last-child:after {
-  content: "";
-  padding: 0;
-}
-.sub-menu ul li a {
-  font-size: 15px;
-  color: #717070;
-  width: auto;
-  height: auto;
-  background: none !important;
-  display: inline-block;
-}
-.sub-menu ul li a:hover {
-  color: #e3001d;
-  background: none !important;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.car .car-box {
-  position: relative;
-  width: 900px;
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }
 
-.car .car-box .image-loading {
-  position: fixed;
-  width: 100%;
-  height: 350px;
-  background: white url("../images/loading-car.gif") center center no-repeat;
-  z-index: 999;
-  opacity: 0.5;
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.car .car-box img {
-  position: absolute;
-  left: 0px;
-}
-
-@media only screen and (min-width: 1400px) and (max-width: 3000px) {
-  .car {
-    top: 33%;
-  }
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }

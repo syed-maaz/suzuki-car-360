@@ -123,7 +123,7 @@ const ImageRendererComponent = (props) => {
   };
   return (
     <div
-      className="car-box"
+      className="car-box w-1/2 h-1/2 relative bg-red-300"
       style={{
         display: angle === i ? "" : "none",
       }}
@@ -134,17 +134,19 @@ const ImageRendererComponent = (props) => {
         ""
       )}
 
-      <img src={getVariantSrc(i)} onLoad={(e) => setIsVariantLoading(false)} />
+      <img src={getVariantSrc(i)} onLoad={(e) => setIsVariantLoading(false)} className="w-full absolute left-0 bottom-0" />
       {/* <ImageTag imgSrc={getVariantSrc(i)}></ImageTag> */}
       <img
         src={getShadowtSrc(i)}
         onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
+        className="w-full absolute left-0 bottom-0"
       />
-      <img src={getWheeltSrc(i)} onLoad={(e) => setIsWheelLoading(false)} />
+      <img src={getWheeltSrc(i)} onLoad={(e) => setIsWheelLoading(false)} className="w-full absolute left-0 bottom-0" />
       {!!rareUpperSpoiler ? (
         <img
           src={getRareSpoilertSrc(i)}
           onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
+          className="w-full absolute left-0 bottom-0"
         />
       ) : (
         " "
@@ -153,6 +155,7 @@ const ImageRendererComponent = (props) => {
         <img
           src={getRareUnderSpoilertSrc(i)}
           onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
+          className="w-full absolute left-0 bottom-0"
         />
       ) : (
         " "
@@ -161,6 +164,7 @@ const ImageRendererComponent = (props) => {
         <img
           src={getSideSpoilertSrc(i)}
           onLoad={(e) => setLoadedNumComp(false)}
+          className="w-full absolute left-0 bottom-0"
         />
       ) : (
         " "
@@ -169,6 +173,7 @@ const ImageRendererComponent = (props) => {
         <img
           src={getFrontSpoilertSrc(i)}
           onLoad={(e) => setLoadedNumComp(false)}
+          className="w-full absolute left-0 bottom-0"
         />
       ) : (
         " "
