@@ -8,6 +8,8 @@ import { loadConfig } from "../crud/loadConfigCrud";
 
 import { addConfig } from "../redux/data.reducer";
 
+import backgroundImg from "../images/bg.jpg";
+
 const HomePageComponent = (props) => {
   const [config, setConfig] = useState();
 
@@ -26,10 +28,13 @@ const HomePageComponent = (props) => {
   return (
     <>
       <div className="App">
-        <div className="bg">
-          <CarExteriorComponent />
-        </div>
-        <div className="wrapper">
+        <div className="wrapper relative">
+          <div className="bg">
+            <img src={backgroundImg} className="w-full" alt="cover" />
+            <div class="absolute inset-0">
+              <CarExteriorComponent />
+            </div>
+          </div>
           <BottomNavigationComponent />
         </div>
       </div>

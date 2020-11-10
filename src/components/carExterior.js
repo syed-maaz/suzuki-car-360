@@ -110,7 +110,7 @@ const CarExteriorComponent = (props) => {
   return (
     <ImageLoadProvider>
       <div
-        className="car"
+        className="car absolute bottom-0 w-full flex justify-center"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
