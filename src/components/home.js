@@ -34,8 +34,8 @@ const HomePageComponent = (props) => {
             <div class="absolute inset-0">
               <CarExteriorComponent />
             </div>
+            <BottomNavigationComponent />
           </div>
-          <BottomNavigationComponent />
         </div>
       </div>
     </>
