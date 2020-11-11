@@ -143,12 +143,12 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li>
+        <li className="color-menu">
           <a className="h-12 rounded text-white" href="#">
             Spray
           </a>
           <div className="sub-menu">
-            <div class="container">
+
               <div class="donut-chart-block block">
                 <div class="donut-chart">
                   <div id="part1" class="portion-block">
@@ -181,7 +181,7 @@ const BottomNavigationComponent = (props) => {
                   <p class="center"></p>
                 </div>
               </div>
-            </div>
+            
             {/* <ul>
               {!!colors.length &&
                 colors.map((d, i) => (
