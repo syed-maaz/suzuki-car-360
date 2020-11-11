@@ -1,0 +1,201 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.donut-chart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 100%;
+}
+p.center {
+  background: #ffffff;
+  position: absolute;
+  text-align: center;
+  font-size: 28px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 130px;
+  height: 130px;
+  margin: auto;
+  border-radius: 50%;
+  line-height: 35px;
+  padding: 15% 0 0;
+}
+
+.portion-block {
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.circle {
+  border-radius: 50%;
+  clip: rect(0px, 100px, 200px, 0px);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+
+#part1 {
+  transform: rotate(0deg);
+}
+
+#part1 .circle {
+  background-color: #e64c65;
+  /*transform: rotate(76deg);*/
+  animation: first 1 forwards;
+}
+
+#part2 {
+  transform: rotate(40deg);
+}
+#part2 .circle {
+  background-color: #11a8ab;
+  animation: second 1 forwards;
+}
+#part3 {
+  transform: rotate(80deg);
+}
+#part3 .circle {
+  background-color: #4fc4f6;
+  animation: third 1 forwards;
+}
+
+#part4 {
+  transform: rotate(120deg);
+}
+#part4 .circle {
+  background-color: #4fc4f6;
+  animation: forth 1 forwards;
+}
+
+#part5 {
+  transform: rotate(160deg);
+}
+#part5 .circle {
+  background-color: #4fc4f6;
+  animation: fifth 1 forwards;
+}
+
+#part6 {
+  transform: rotate(200deg);
+}
+#part6 .circle {
+  background-color: #4fc4f6;
+  animation: sixth 1 forwards;
+}
+
+#part7 {
+  transform: rotate(240deg);
+}
+#part7 .circle {
+  background-color: #4fc4f6;
+  animation: seventh 1 forwards;
+}
+
+#part8 {
+  transform: rotate(280deg);
+}
+#part8 .circle {
+  background-color: #4fc4f6;
+  animation: eight 1 forwards;
+}
+
+#part9 {
+  transform: rotate(320deg);
+}
+#part9 .circle {
+  background-color: #4fc4f6;
+  animation: nine 1 forwards;
+}
+
+/* Animation */
+@keyframes first {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes second {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes third {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes forth {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes fifth {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes sixth {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes seventh {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes eight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes nine {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(40deg);
+  }
+}

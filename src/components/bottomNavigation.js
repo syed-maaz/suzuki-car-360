@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { connect } from "react-redux";
 
+import "../styles/color-donut.css";
+
 import {
   updateVariantAction,
   updateColorAction,
@@ -93,7 +95,7 @@ const BottomNavigationComponent = (props) => {
   };
 
   return (
-    <nav class="absolute inset-x-0 bottom-0 mb-8 md:mb-16 flex items-center justify-center">
+    <nav className="absolute inset-x-0 bottom-0 mb-8 md:mb-16 flex items-center justify-center">
       <Modal show={show} onHide={handleClose} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Interior</Modal.Title>
@@ -110,17 +112,17 @@ const BottomNavigationComponent = (props) => {
           />
         </Modal.Body>
       </Modal>
-      <ul class="flex items-center">
+      <ul className="flex items-center">
         <li>
-          <button class="h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">
+          <button className="h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">
             Exterior
           </button>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">
+          <a className="h-12 rounded text-white" href="#">
             Car Type
           </a>
-          <div class="sub-menu">
+          <div className="sub-menu">
             <ul>
               {!!variants.length &&
                 variants.map((d, i) => (
@@ -142,11 +144,45 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">
+          <a className="h-12 rounded text-white" href="#">
             Spray
           </a>
           <div className="sub-menu">
-            <ul>
+            <div class="container">
+              <div class="donut-chart-block block">
+                <div class="donut-chart">
+                  <div id="part1" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part2" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part3" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part4" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part5" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part6" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part7" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part8" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <div id="part9" class="portion-block">
+                    <div class="circle"></div>
+                  </div>
+                  <p class="center"></p>
+                </div>
+              </div>
+            </div>
+            {/* <ul>
               {!!colors.length &&
                 colors.map((d, i) => (
                   <li key={i} onClick={(e) => props.updateColorAction(d)}>
@@ -163,11 +199,11 @@ const BottomNavigationComponent = (props) => {
                     <a href="#">{d.name}</a>
                   </li>
                 ))}
-            </ul>
+            </ul> */}
           </div>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">
+          <a className="h-12 rounded text-white" href="#">
             Wheels
           </a>
           <div className="sub-menu">
@@ -193,7 +229,7 @@ const BottomNavigationComponent = (props) => {
         </li>
         {/* Spoilers */}
         <li>
-          <a class="h-12 rounded text-white" href="#">
+          <a className="h-12 rounded text-white" href="#">
             Setting
           </a>
           <div className="sub-menu">
@@ -290,7 +326,7 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">
+          <a className="h-12 rounded text-white" href="#">
             Other Options
           </a>
           <div className="sub-menu">
@@ -322,25 +358,25 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">
+          <a className="h-12 rounded text-white" href="#">
             Variant
           </a>
           <div className="sub-menu">
             <ul>
-              <li>Variant {cVariant.name}</li>
-              <li>Wheel {cWheel.name}</li>
-              <li>Color {cColor.name}</li>
+              <li>Variant: {cVariant.name}</li>
+              <li>Wheel Type: {cWheel.name}</li>
+              <li>Color: {cColor.name}</li>
               {rareUpperSpoiler ? <li>Rare Spoiler</li> : ""}
               {frontSpoiler ? <li>Front Spoiler</li> : ""}
               {sideSpoiler ? <li>Side Spoiler</li> : ""}
-              {!!otherOptions.length &&
-                otherOptions.map((d, i) => <li>{d.name}</li>)}
+              {!!Object.keys(cOther).length &&
+                Object.keys(cOther).map((d) => <li>{d}</li>)}
             </ul>
           </div>
         </li>
         <li>
           <button
-            class="right h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300"
+            className="right h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300"
             onClick={handleShow}
           >
             Interior
