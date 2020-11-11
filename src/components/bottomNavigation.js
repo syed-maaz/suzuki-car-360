@@ -112,10 +112,14 @@ const BottomNavigationComponent = (props) => {
       </Modal>
       <ul class="flex items-center">
         <li>
-          <button class="h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">Exterior</button>
+          <button class="h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">
+            Exterior
+          </button>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">Car Type</a>
+          <a class="h-12 rounded text-white" href="#">
+            Car Type
+          </a>
           <div class="sub-menu">
             <ul>
               {!!variants.length &&
@@ -138,7 +142,9 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">Spray</a>
+          <a class="h-12 rounded text-white" href="#">
+            Spray
+          </a>
           <div className="sub-menu">
             <ul>
               {!!colors.length &&
@@ -161,7 +167,9 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">Wheels</a>
+          <a class="h-12 rounded text-white" href="#">
+            Wheels
+          </a>
           <div className="sub-menu">
             <ul>
               {!!wheels.length &&
@@ -185,7 +193,9 @@ const BottomNavigationComponent = (props) => {
         </li>
         {/* Spoilers */}
         <li>
-          <a class="h-12 rounded text-white" href="#">Setting</a>
+          <a class="h-12 rounded text-white" href="#">
+            Setting
+          </a>
           <div className="sub-menu">
             <ul>
               {/* Front Under Spoiler */}
@@ -280,7 +290,9 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <a class="h-12 rounded text-white" href="#">Other Options</a>
+          <a class="h-12 rounded text-white" href="#">
+            Other Options
+          </a>
           <div className="sub-menu">
             <ul>
               {!!otherOptions.length &&
@@ -310,7 +322,29 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         <li>
-          <button class="right h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300" onClick={handleShow}>Interior</button>
+          <a class="h-12 rounded text-white" href="#">
+            Variant
+          </a>
+          <div className="sub-menu">
+            <ul>
+              <li>Variant {cVariant.name}</li>
+              <li>Wheel {cWheel.name}</li>
+              <li>Color {cColor.name}</li>
+              {rareUpperSpoiler ? <li>Rare Spoiler</li> : ""}
+              {frontSpoiler ? <li>Front Spoiler</li> : ""}
+              {sideSpoiler ? <li>Side Spoiler</li> : ""}
+              {!!otherOptions.length &&
+                otherOptions.map((d, i) => <li>{d.name}</li>)}
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button
+            class="right h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300"
+            onClick={handleShow}
+          >
+            Interior
+          </button>
         </li>
       </ul>
     </nav>
