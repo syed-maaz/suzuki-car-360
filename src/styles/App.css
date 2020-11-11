@@ -222,3 +222,7 @@ nav ul li ul::before{
   text-decoration: none;
   cursor: pointer;
 }
+
+.modal-backdrop {
+  z-index: inherit !important;
+}
