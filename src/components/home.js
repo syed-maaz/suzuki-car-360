@@ -31,7 +31,7 @@ const HomePageComponent = (props) => {
         <div className="bg">
           <div className="wrapper relative">
             <img src={backgroundImg} className="w-full" alt="cover" />
-            <div class="absolute inset-0">
+            <div className="absolute inset-0">
               <CarExteriorComponent />
             </div>
             <BottomNavigationComponent />

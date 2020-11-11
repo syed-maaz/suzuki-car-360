@@ -9,7 +9,7 @@ export const UPDATE_RARE_UPPER_SPOILER = "UPDATE_RARE_UPPER_SPOILER";
 export const UPDATE_RARE_UNDER_SPOILER = "UPDATE_RARE_UNDER_SPOILER";
 export const UPDATE_SIDE_SPOILER = "UPDATE_SIDE_SPOILER";
 export const UPDATE_FRONT_SPOILER = "UPDATE_FRONT_SPOILER";
-export const UPDATE_OTHER_OPTION = "UPDATE_FRONT_SPOILER";
+export const UPDATE_OTHER_OPTION = "UPDATE_OTHER_OPTION";
 
 /**
  * Actions
@@ -113,7 +113,7 @@ const INITIAL_STATE = {
  * @param {*} action
  */
 const reducer = (state = INITIAL_STATE, action) => {
-  console.log("state");
+  console.log("state", action.type);
   console.log(state);
   switch (action.type) {
     case UPDATE_VARIANT:
