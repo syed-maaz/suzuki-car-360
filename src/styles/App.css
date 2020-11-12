@@ -236,3 +236,8 @@ nav ul li ul::before{
   text-align: left;
   border-radius: 0;
 }
+
+.image-loading {
+  z-index: 99;
+  opacity: 0.5;
+}
