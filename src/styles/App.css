@@ -240,4 +240,10 @@ nav ul li ul::before{
 .image-loading {
   z-index: 99;
   opacity: 0.5;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  left: 10%;
 }
