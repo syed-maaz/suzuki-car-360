@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import ImageTag from "./imageTag";
 
 import { ImageLoadContext } from "../contexts/imageLoaderContext";
+import loaderImg from "../images/loading-car.gif";
 
 const ImageRendererComponent = (props) => {
   const {
@@ -131,7 +132,10 @@ const ImageRendererComponent = (props) => {
       }}
     >
       {isVariantLoading || isWheelLoading ? (
-        <div className="image-loading"></div>
+        <img
+          src={loaderImg}
+          className="image-loading w-full absolute left-0 bottom-0"
+        />
       ) : (
         ""
       )}
