@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import ImageTag from "./imageTag";
 
 import { ImageLoadContext } from "../contexts/imageLoaderContext";
-import loaderImg from "../images/loading-car.gif";
+import loaderImg from "../images/loading.gif";
 
 const ImageRendererComponent = (props) => {
   const {
