@@ -231,25 +231,6 @@ const BottomNavigationComponent = (props) => {
                 },
               }}
             />
-
-            {/* <ul>
-              {!!colors.length &&
-                colors.map((d, i) => (
-                  <li key={i} onClick={(e) => props.updateColorAction(d)}>
-                    {cColor.name === d.name ? (
-                      <>
-                        <i
-                          className="fas fa-check-circle"
-                          style={{ color: "green" }}
-                        ></i>{" "}
-                      </>
-                    ) : (
-                      " "
-                    )}
-                    <a href="#">{d.name}</a>
-                  </li>
-                ))}
-            </ul> */}
           </div>
         </li>
         <li>
@@ -411,16 +392,63 @@ const BottomNavigationComponent = (props) => {
           <a className="h-12 rounded text-white" href="#">
             Variant
           </a>
-          <div className="sub-menu">
-            <ul>
-              <li>Variant: {cVariant.name}</li>
-              <li>Wheel Type: {cWheel.name}</li>
-              <li>Color: {cColor.name}</li>
-              {rareUpperSpoiler ? <li>Rare Spoiler</li> : ""}
-              {frontSpoiler ? <li>Front Spoiler</li> : ""}
-              {sideSpoiler ? <li>Side Spoiler</li> : ""}
-              {!!Object.keys(cOther).length &&
-                Object.keys(cOther).map((d) => <li>{d}</li>)}
+          <div className="sub-menu list whitespace-normal flex">
+            <ul className="text-left grid grid-cols-2">
+              <li>
+                <div className="text-xs md:text-base font-semibold text-red-500">
+                  Grade
+                </div>
+                <div className="text-xs md:text-base mt-1 text-sm text-gray-800">
+                  {cVariant.name}
+                </div>
+                <div className="text-xs md:text-base font-semibold text-red-500 mt-2">
+                  Body Colour
+                </div>
+                <div className="text-xs md:text-base mt-1 text-sm text-gray-800">
+                  {cColor.name}
+                </div>
+                <div className="text-xs md:text-base font-semibold text-red-500 mt-2">
+                  Wheel Type
+                </div>
+                <div className="text-xs md:text-base mt-1 text-sm text-gray-800">
+                  {cWheel.name}
+                </div>
+              </li>
+              {/* <!-- left --> */}
+              <li>
+                <div className="text-xs md:text-base font-semibold text-red-500">
+                  Option & Accessories
+                </div>
+
+                {rareUpperSpoiler ? (
+                  <div className="text-xs md:text-base mt-1 text-sm text-gray-800">
+                    Rare Spoiler
+                  </div>
+                ) : (
+                  ""
+                )}
+                {frontSpoiler ? (
+                  <div className="text-xs md:text-base mt-1 text-sm text-gray-800">
+                    Front Spoiler
+                  </div>
+                ) : (
+                  ""
+                )}
+                {sideSpoiler ? (
+                  <div className="text-xs md:text-base mt-1 text-sm text-gray-800">
+                    Side Spoiler
+                  </div>
+                ) : (
+                  ""
+                )}
+                {!!Object.keys(cOther).length &&
+                  Object.keys(cOther).map((d) => (
+                    <div className="text-xs md:text-base mt-1 text-sm text-gray-800">
+                      {d}
+                    </div>
+                  ))}
+              </li>
+              {/* <!-- right --> */}
             </ul>
           </div>
         </li>
