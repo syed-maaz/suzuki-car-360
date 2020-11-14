@@ -247,3 +247,31 @@ nav ul li ul::before {
   text-align: center;
   left: 10%;
 }
+
+.sub-menu.list {
+  white-space: normal;
+  top: inherit;
+  bottom: 140%;
+}
+
+.sub-menu.list ul {
+  width: 420px;
+}
+
+.sub-menu.list ul li::before {
+  display: none;
+}
+
+.sub-menu.list ul li:first-child::after {
+  position: absolute;
+  width: 2px;
+  padding: 0px;
+  height: 100%;
+  left: 90%;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sub-menu.list ul::before {
+  top: 100%;
+}
