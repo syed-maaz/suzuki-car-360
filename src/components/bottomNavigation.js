@@ -138,7 +138,6 @@ const BottomNavigationComponent = (props) => {
     return !!cOther[name];
   };
 
-  // apply car color
   const applyCarColorByIndex = (idx) => {
     props.updateColorAction(colors[idx]);
   };
