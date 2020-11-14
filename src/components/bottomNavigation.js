@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 import "../styles/color-donut.css";
 
+import { Doughnut } from "react-chartjs-2";
+
 import {
   updateVariantAction,
   updateColorAction,
@@ -42,6 +44,48 @@ const BottomNavigationComponent = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [donutData, setDonutData] = useState({
+    datasets: [
+      {
+        data: [40, 40, 40, 40, 40, 40, 40, 40, 40],
+        backgroundColor: [
+          "#0000FF",
+          "#676767",
+          "#6D6D64",
+          "#c0c0c0",
+          "#f92420",
+          "#f4f3ef",
+          "#1b1e23",
+          "#ce2029",
+          "#ffffff",
+        ],
+        hoverBackgroundColor: [
+          "#0000FF",
+          "#676767",
+          "#6D6D64",
+          "#c0c0c0",
+          "#f92420",
+          "#f4f3ef",
+          "#1b1e23",
+          "#ce2029",
+          "#ffffff",
+        ],
+      },
+    ],
+
+    labels: [
+      "Blue",
+      "Granite Gray",
+      "Magma Grey",
+      "Premium Silver",
+      "PHOENIX RED",
+      "Arctic white",
+      "Midnight Black",
+      "Fire Red",
+      "White",
+    ],
+  });
 
   useEffect(() => {
     if (!!config && !!config.variants) {
@@ -92,6 +136,10 @@ const BottomNavigationComponent = (props) => {
 
   const isOptionActive = (name) => {
     return !!cOther[name];
+  };
+
+  const applyCarColorByIndex = (idx) => {
+    props.updateColorAction(colors[idx]);
   };
 
   return (
@@ -147,41 +195,43 @@ const BottomNavigationComponent = (props) => {
           <a className="h-12 rounded text-white" href="#">
             Spray
           </a>
-          <div className="sub-menu">
+          <div
+            className="sub-menu"
+            style={{
+              height: "200px",
+              width: "274px",
+              top: "-145px",
+              left: "-107px",
+            }}
+          >
+            <Doughnut
+              data={donutData}
+              options={{
+                legend: {
+                  display: false,
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function (tooltipItem, data) {
+                      return data.labels[tooltipItem.index];
+                    },
+                  },
+                },
+                responsive: true,
+                maintainAspectRatio: true,
+                onClick: (event, elements) => {
+                  const chart = elements[0]._chart;
+                  const element = chart.getElementAtEvent(event)[0];
+                  const dataset = chart.data.datasets[element._datasetIndex];
+                  const xLabel = chart.data.labels[element._index];
+                  const value = dataset.data[element._index];
+                  console.log(element._index);
+                  console.log(dataset + " at " + xLabel + ": " + value);
+                  applyCarColorByIndex(element._index);
+                },
+              }}
+            />
 
-              <div class="donut-chart-block block">
-                <div class="donut-chart">
-                  <div id="part1" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part2" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part3" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part4" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part5" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part6" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part7" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part8" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <div id="part9" class="portion-block">
-                    <div class="circle"></div>
-                  </div>
-                  <p class="center"></p>
-                </div>
-              </div>
-            
             {/* <ul>
               {!!colors.length &&
                 colors.map((d, i) => (
