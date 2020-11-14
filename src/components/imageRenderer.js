@@ -108,15 +108,17 @@ const ImageRendererComponent = (props) => {
         if (!otherOptions[item]) {
           return;
         }
-        an = parseInt(an) + parseInt(otherOptions[item].startingFrom);
-        an = ("0" + an).slice(-2);
+
+        let angle = an;
+        angle = parseInt(angle) + parseInt(otherOptions[item].startingFrom);
+        angle = ("0" + angle).slice(-2);
 
         if (!!otherOptions[item].reference) {
           const ref = otherOptions[item].reference;
-          src = `images/baleno-items/${color[ref]}/${color[ref]}_${an}.png`;
+          src = `images/baleno-items/${color[ref]}/${color[ref]}_${angle}.png`;
         } else if (!!otherOptions[item].folder) {
           const folder = otherOptions[item].folder;
-          src = `images/baleno-items/${folder}/${folder}_${an}.png`;
+          src = `images/baleno-items/${folder}/${folder}_${angle}.png`;
         }
         return (
           <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
