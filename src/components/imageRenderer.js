@@ -134,10 +134,13 @@ const ImageRendererComponent = (props) => {
       }}
     >
       {isVariantLoading || isWheelLoading ? (
-        <div className="flex items-center justify-center fixed inset-0">
+        <div
+          className="flex items-center justify-center fixed inset-0"
+          style={{ "z-index": "999999" }}
+        >
           <img
-            src={loaderImg}
-            className="w-32 md:w-64 image-loading w-full absolute left-0 bottom-0"
+            className="w-32 md:w-64"
+            src="https://i.ibb.co/FBbkxDD/ezgif-6-8fba730900b1.gif"
           />
         </div>
       ) : (

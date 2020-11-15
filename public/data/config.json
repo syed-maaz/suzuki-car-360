@@ -44,11 +44,11 @@
             "name": "Premium Silver",
             "folder": "_Base_Met.Premium_Silver",
             "fileName": "_BASE _Met.Premium Silver_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZTN",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZTN",
-            "sideSpoilerFolder": "EXT-K_001-BC_ZTN",
-            "frontSpoilerFolder": "EXT-J_001-BC_ZTN",
-            "parkingSensor": "EXT-H_001-BC_ZTN"
+            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZQS",
+            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZQS",
+            "sideSpoilerFolder": "EXT-K_001-BC_ZQS",
+            "frontSpoilerFolder": "EXT-J_001-BC_ZQS",
+            "parkingSensor": "EXT-H_001-BC_ZQS"
         },
         {
             "name": "PHOENIX RED",
@@ -74,11 +74,11 @@
             "name": "Midnight Black",
             "folder": "_Base_Prme_Midnight_Black",
             "fileName": "_BASE _Prme Midnight Black_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_Z7Q",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_Z7Q",
-            "sideSpoilerFolder": "EXT-K_001-BC_Z7Q",
-            "frontSpoilerFolder": "EXT-J_001-BC_Z7Q",
-            "parkingSensor": "EXT-H_001-BC_Z7Q"
+            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZAM",
+            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZAM",
+            "sideSpoilerFolder": "EXT-K_001-BC_ZAM",
+            "frontSpoilerFolder": "EXT-J_001-BC_ZAM",
+            "parkingSensor": "EXT-H_001-BC_ZAM"
         },
         {
             "name": "Fire Red",
