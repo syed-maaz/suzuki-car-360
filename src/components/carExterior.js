@@ -22,8 +22,6 @@ const CarExteriorComponent = (props) => {
   const [frontSpoiler, setFrontSpoiler] = useState(false);
   const [otherOptions, setOtherOptions] = useState([]);
 
-  const [isRotateActive, setIsRotateActive] = useState(false);
-  const [prevPosX, setPrevPosX] = useState(false);
   const [render, setRender] = useState(0);
 
   const [totalActiveComp, setTotalActiveComp] = useState(0);
@@ -78,45 +76,9 @@ const CarExteriorComponent = (props) => {
     setTotalActiveComp(total);
   };
 
-  const handleMouseUp = (e) => {
-    e.preventDefault();
-    setIsRotateActive(false);
-    setPrevPosX(0);
-  };
-
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-    setIsRotateActive(true);
-    setPrevPosX(e.pageX);
-  };
-
-  const handleMouseMove = (e) => {
-    e.preventDefault();
-    if (isRotateActive) {
-      if (e.pageX % 5 != 0) return;
-      let nAngle = 0;
-      if (e.pageX > prevPosX) {
-        nAngle = parseInt(angle) + 1 > totalAngle - 1 ? 0 : parseInt(angle) + 1;
-        setAngle(nAngle);
-      } else {
-        nAngle = parseInt(angle) - 1 < 0 ? totalAngle - 1 : parseInt(angle) - 1;
-        setAngle(nAngle);
-      }
-      props.updateangleAction(nAngle);
-      setPrevPosX(e.pageX);
-    }
-  };
-
   return (
     <ImageLoadProvider>
-      <div
-        className="car absolute bottom-0 w-full flex justify-center"
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-      >
-        {/* {totalActiveComp} */}
-
+      <div className="car absolute bottom-0 w-full flex justify-center">
         {[...Array(totalAngle)].map((e, index) => (
           <ImageRendererComponent
             key={index}
