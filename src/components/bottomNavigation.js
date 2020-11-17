@@ -40,6 +40,10 @@ const BottomNavigationComponent = (props) => {
   const [cColor, setCColor] = useState({});
   const [cOther, setCOther] = useState({});
 
+  const [isAllOtherOptionSelected, setIsAllOtherOptionSelected] = useState(
+    false
+  );
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -362,6 +366,27 @@ const BottomNavigationComponent = (props) => {
           </a>
           <div className="sub-menu">
             <ul>
+              <li
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsAllOtherOptionSelected(!isAllOtherOptionSelected);
+                  otherOptions.map((d, i) => {
+                    updateOtherOptions(d);
+                  });
+                }}
+              >
+                {isAllOtherOptionSelected ? (
+                  <>
+                    <i
+                      className="fas fa-check-circle"
+                      style={{ color: "green" }}
+                    ></i>{" "}
+                  </>
+                ) : (
+                  " "
+                )}
+                <a href="#">Select All</a>
+              </li>
               {!!otherOptions.length &&
                 otherOptions.map((d, i) => (
                   <li key={i} onClick={(e) => updateOtherOptions(d)}>
