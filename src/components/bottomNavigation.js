@@ -147,7 +147,7 @@ const BottomNavigationComponent = (props) => {
   };
 
   return (
-    <nav className="absolute inset-x-0 bottom-0 mb-8 md:mb-16 flex items-center justify-center">
+    <nav className="absolute w-full inset-x-0 bottom-0 md:mb-8 md:mb-16 md:flex md:items-center md:justify-center">
       <Modal show={show} onHide={handleClose} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Interior</Modal.Title>
@@ -164,14 +164,14 @@ const BottomNavigationComponent = (props) => {
           />
         </Modal.Body>
       </Modal>
-      <ul className="flex items-center">
-        <li>
-          <button className="h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">
+      <ul className="flex space-x-px md:space-x-1 items-center">
+        <li class="w-full">
+          <button className="h-12 px-3 md:px-10 md:rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">
             Exterior
           </button>
         </li>
-        <li>
-          <a className="h-12 rounded text-white" href="#">
+        <li class="w-full">
+          <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Car Type
           </a>
           <div className="sub-menu">
@@ -195,17 +195,18 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li className="color-menu">
-          <a className="h-12 rounded text-white" href="#">
+        <li className="color-menu w-full">
+          <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Spray
           </a>
           <div
             className="sub-menu"
             style={{
-              height: "200px",
+              height: "inherit",
               width: "274px",
-              top: "-145px",
-              left: "-107px",
+              top: "-150px",
+              left: "-112px",
+              background: 'none'
             }}
           >
             <Doughnut
@@ -237,8 +238,8 @@ const BottomNavigationComponent = (props) => {
             />
           </div>
         </li>
-        <li>
-          <a className="h-12 rounded text-white" href="#">
+        <li class="w-full">
+          <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Wheels
           </a>
           <div className="sub-menu">
@@ -263,8 +264,8 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         {/* Spoilers */}
-        <li>
-          <a className="h-12 rounded text-white" href="#">
+        <li class="w-full">
+          <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Setting
           </a>
           <div className="sub-menu">
@@ -360,8 +361,8 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li>
-          <a className="h-12 rounded text-white" href="#">
+        <li class="w-full">
+          <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Other Options
           </a>
           <div className="sub-menu">
@@ -413,8 +414,8 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li>
-          <a className="h-12 rounded text-white" href="#">
+        <li class="w-full">
+          <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Variant
           </a>
           <div className="sub-menu list whitespace-normal flex">
@@ -477,9 +478,9 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li>
+        <li class="w-full">
           <button
-            className="right h-12 px-10 rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300"
+            className="right h-12 px-3 md:px-10 md:rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300"
             onClick={handleShow}
           >
             Interior
