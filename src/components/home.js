@@ -73,7 +73,9 @@ const HomePageComponent = (props) => {
         (e.targetTouches[0]
           ? e.targetTouches[0].pageX
           : e.changedTouches[e.changedTouches.length - 1].pageX);
-      if (pageX % moveFactor != 0) return;
+      if (moveFactor > 0) {
+        if (pageX % moveFactor != 0) return;
+      }
       if (pageX > prevPosX) {
         nAngle = parseInt(angle) + 1 > totalAngle - 1 ? 0 : parseInt(angle) + 1;
         setAngle(nAngle);
@@ -95,7 +97,7 @@ const HomePageComponent = (props) => {
               className="absolute inset-0"
               onTouchStart={(e) => handleMouseDown(e)}
               onTouchEnd={() => handleMouseUp()}
-              onTouchMove={(e) => handleMouseMove(e, 2)}
+              onTouchMove={(e) => handleMouseMove(e, 0)}
               onMouseDown={(e) => {
                 e.preventDefault();
                 handleMouseDown(e);
