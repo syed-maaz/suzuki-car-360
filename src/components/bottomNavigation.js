@@ -92,6 +92,7 @@ const BottomNavigationComponent = (props) => {
   });
 
   useEffect(() => {
+    console.log(config);
     if (!!config && !!config.variants) {
       setVariants(config.variants);
     }
@@ -107,6 +108,7 @@ const BottomNavigationComponent = (props) => {
   }, [config]);
 
   useEffect(() => {
+    console.log(carState);
     if (!!carState) {
       if (!!carState.variant) {
         setCVariant(carState.variant);
@@ -165,12 +167,12 @@ const BottomNavigationComponent = (props) => {
         </Modal.Body>
       </Modal>
       <ul className="flex space-x-px md:space-x-1 items-center">
-        <li class="w-full">
+        <li className="w-full">
           <button className="h-12 px-3 md:px-10 md:rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">
             Exterior
           </button>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Car Type
           </a>
@@ -206,7 +208,7 @@ const BottomNavigationComponent = (props) => {
               width: "274px",
               top: "-150px",
               left: "-112px",
-              background: 'none'
+              background: "none",
             }}
           >
             <Doughnut
@@ -238,7 +240,7 @@ const BottomNavigationComponent = (props) => {
             />
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Wheels
           </a>
@@ -264,7 +266,7 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         {/* Spoilers */}
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Setting
           </a>
@@ -361,7 +363,7 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Other Options
           </a>
@@ -414,7 +416,7 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Variant
           </a>
@@ -478,7 +480,7 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <button
             className="right h-12 px-3 md:px-10 md:rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300"
             onClick={handleShow}

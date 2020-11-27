@@ -1,6 +1,7 @@
 /**
  * Types
  */
+export const UPDATE_BASE_PATH = "UPDATE_BASEPATH";
 export const UPDATE_VARIANT = "UPDATE_VARIANT";
 export const UPDATE_COLOR = "UPDATE_COLOR";
 export const UPDATE_WHEEL = "UPDATE_WHEEL";
@@ -10,6 +11,7 @@ export const UPDATE_RARE_UNDER_SPOILER = "UPDATE_RARE_UNDER_SPOILER";
 export const UPDATE_SIDE_SPOILER = "UPDATE_SIDE_SPOILER";
 export const UPDATE_FRONT_SPOILER = "UPDATE_FRONT_SPOILER";
 export const UPDATE_OTHER_OPTION = "UPDATE_OTHER_OPTION";
+export const UPDATE_VARIANT_STATINGFROM = "UPDATE_VARIANT_STATINGFROM";
 
 /**
  * Actions
@@ -77,29 +79,25 @@ export const updateOtherOptions = (config) => {
   };
 };
 
+export const updateBasePath = (value) => {
+  return {
+    type: UPDATE_BASE_PATH,
+    value,
+  };
+};
+
+export const updateVariantStartFrom = (value) => {
+  return {
+    type: UPDATE_VARIANT_STATINGFROM,
+    value,
+  };
+};
+
 /**
  * Initial State
  */
 const INITIAL_STATE = {
   angle: 4,
-  wheel: {
-    name: "Wheel Type 1",
-    folder: "EXT-WH_001-BG_A",
-  },
-  variant: {
-    name: "GL",
-    folder: "GL base",
-  },
-  color: {
-    name: "Blue",
-    folder: "_Base_Blue",
-    fileName: "_BASE _BLUE_000",
-    rareUpperSpoilerFolder: "EXT-A_001-BC_ZYR",
-    rareUnderSpoilerFolder: "EXT-L_001-BC_ZYR",
-    sideSpoilerFolder: "EXT-K_001-BC_ZYR",
-    frontSpoilerFolder: "EXT-J_001-BC_ZYR",
-    parkingSensor: "EXT-H_001-BC_ZYR",
-  },
   rareUpperSpoiler: false,
   rareUnderSpoiler: false,
   sideSpoiler: false,
@@ -169,6 +167,17 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         otherOptions: action.value,
+      };
+
+    case UPDATE_BASE_PATH:
+      return {
+        ...state,
+        basePath: action.value,
+      };
+    case UPDATE_VARIANT_STATINGFROM:
+      return {
+        ...state,
+        variantStartingFrom: action.value,
       };
 
     default:

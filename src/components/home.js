@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { shallowEqual, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import CarExteriorComponent from "./carExterior";
 import BottomNavigationComponent from "./bottomNavigation";
-import { loadConfig } from "../crud/loadConfigCrud";
+import { loadConfigByMeta, loadCarsConfig } from "../crud/loadConfigCrud";
 
-import { addConfig } from "../redux/data.reducer";
-import { updateangleAction } from "../redux/carState.reducer";
+import { addConfig } from "../redux/config.reducer";
+import { updateBasePath } from "../redux/carState.reducer";
+import {
+  updateangleAction,
+  updateVariantAction,
+  updateColorAction,
+  updateWheelAction,
+  updateVariantStartFrom,
+} from "../redux/carState.reducer";
 
 import backgroundImg from "../images/bg.jpg";
 
 const HomePageComponent = (props) => {
   const [config, setConfig] = useState();
-
-  const count = useSelector((state) => state.config);
 
   const [isRotateActive, setIsRotateActive] = useState(false);
   const [prevPosX, setPrevPosX] = useState(false);
@@ -25,13 +31,25 @@ const HomePageComponent = (props) => {
 
   const totalAngle = 36;
 
+  // get url parameter
+  const { carName } = useParams();
+
   useEffect(async () => {
-    const { data } = await loadConfig();
-    setConfig(data);
+    const carsConfig = await loadCarsConfig();
+    // Check if carName (url param) is in carsConfig. Otherwise throw error
+    const carMeta = carsConfig.find((d) => d.id === carName);
+    console.log(carMeta);
+    if (!carMeta) {
+      console.error(
+        "incorrect car is given in parameter or car is missing in carConfig.json"
+      );
+      return;
+    }
+    const { data } = await loadConfigByMeta(carMeta);
+    configureSettings(data);
   }, []);
 
   useEffect(async () => {
-    // console.log(config);
     props.addConfig(config);
   }, [config]);
 
@@ -43,18 +61,24 @@ const HomePageComponent = (props) => {
     }
   }, [carState]);
 
+  const configureSettings = (config) => {
+    props.updateBasePath(config.basePath);
+    props.updateVariantAction(config.variants[0]);
+    props.updateColorAction(config.colors[0]);
+    props.updateWheelAction(config.wheels[0]);
+    props.updateVariantStartFrom(config.variantStartFrom);
+    setConfig(config);
+  };
+
   const handleMouseUp = (e) => {
-    // e.preventDefault();
     setIsRotateActive(false);
     setPrevPosX(0);
   };
 
   const handleMouseDown = (e) => {
-    // e.preventDefault();
-    console.log("meow");
     const pageX =
       e.pageX ||
-      (e.targetTouches[0]
+      (e.targetTouches && e.targetTouches[0]
         ? e.targetTouches[0].pageX
         : e.changedTouches[e.changedTouches.length - 1].pageX);
     setIsRotateActive(true);
@@ -62,15 +86,11 @@ const HomePageComponent = (props) => {
   };
 
   const handleMouseMove = (e, moveFactor = 3) => {
-    // e.preventDefault();
-
     if (isRotateActive) {
-      console.log("meow1");
-
       let nAngle = 0;
       const pageX =
         e.pageX ||
-        (e.targetTouches[0]
+        (e.targetTouches && e.targetTouches[0]
           ? e.targetTouches[0].pageX
           : e.changedTouches[e.changedTouches.length - 1].pageX);
       if (moveFactor > 0) {
@@ -87,6 +107,7 @@ const HomePageComponent = (props) => {
       setPrevPosX(pageX);
     }
   };
+
   return (
     <>
       <div className="App">
@@ -121,6 +142,12 @@ const HomePageComponent = (props) => {
   );
 };
 
-export default connect(null, { addConfig, updateangleAction })(
-  HomePageComponent
-);
+export default connect(null, {
+  addConfig,
+  updateBasePath,
+  updateangleAction,
+  updateVariantAction,
+  updateColorAction,
+  updateWheelAction,
+  updateVariantStartFrom,
+})(HomePageComponent);
