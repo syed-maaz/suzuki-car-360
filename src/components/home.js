@@ -15,6 +15,7 @@ import {
   updateColorAction,
   updateWheelAction,
   updateVariantStartFrom,
+  updateSpoilers,
 } from "../redux/carState.reducer";
 
 import backgroundImg from "../images/bg.jpg";
@@ -67,6 +68,7 @@ const HomePageComponent = (props) => {
     props.updateColorAction(config.colors[0]);
     props.updateWheelAction(config.wheels[0]);
     props.updateVariantStartFrom(config.variantStartFrom);
+    // props.updateSpoilers(config.spoilers);
     setConfig(config);
   };
 
@@ -134,7 +136,7 @@ const HomePageComponent = (props) => {
             >
               <CarExteriorComponent />
             </div>
-            <BottomNavigationComponent />
+            <BottomNavigationComponent config={config} />
           </div>
         </div>
       </div>
@@ -150,4 +152,5 @@ export default connect(null, {
   updateColorAction,
   updateWheelAction,
   updateVariantStartFrom,
+  updateSpoilers,
 })(HomePageComponent);

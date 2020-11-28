@@ -23,6 +23,7 @@ const CarExteriorComponent = (props) => {
   const [otherOptions, setOtherOptions] = useState([]);
   const [basePath, setBasePath] = useState([]);
   const [startingFrom, setStartingFrom] = useState([]);
+  const [spoilers, setSpoilers] = useState({});
 
   const [render, setRender] = useState(0);
 
@@ -56,6 +57,8 @@ const CarExteriorComponent = (props) => {
 
       setBasePath(carState.basePath);
       setStartingFrom(carState.variantStartingFrom);
+
+      setSpoilers(carState.spoilers);
 
       setRender(render + 1);
 
@@ -101,6 +104,7 @@ const CarExteriorComponent = (props) => {
             basePath={basePath}
             startingFrom={startingFrom}
             render={render}
+            spoilers={spoilers}
           />
         ))}
       </div>

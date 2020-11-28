@@ -18,6 +18,7 @@
             "name": "Blue",
             "folder": "Base_Blue",
             "fileName": "${variantName}_BASE _BLUE_000",
+            "colorCode": "ZYR",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_ZYR",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_ZYR",
             "sideSpoilerFolder": "EXT-K_001-BC_ZYR",
@@ -28,6 +29,7 @@
             "name": "Granite Gray",
             "folder": "Base_Met_Granite_Gray",
             "fileName": "${variantName}_BASE _Met Granite Gray_000",
+            "colorCode": "ZTN",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_ZTN",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_ZTN",
             "sideSpoilerFolder": "EXT-K_001-BC_ZTN",
@@ -38,6 +40,7 @@
             "name": "Magma Grey",
             "folder": "Base_Met.Magma_Grey",
             "fileName": "${variantName}_BASE _Met.Magma Grey_000",
+            "colorCode": "Z7Q",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_Z7Q",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_Z7Q",
             "sideSpoilerFolder": "EXT-K_001-BC_Z7Q",
@@ -48,6 +51,7 @@
             "name": "Premium Silver",
             "folder": "Base_Met.Premium_Silver",
             "fileName": "${variantName}_BASE _Met.Premium Silver_000",
+            "colorCode": "ZQS",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_ZQS",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_ZQS",
             "sideSpoilerFolder": "EXT-K_001-BC_ZQS",
@@ -58,6 +62,7 @@
             "name": "PHOENIX RED",
             "folder": "Base_PHOENIX_RED",
             "fileName": "${variantName}_BASE _PHOENIX_RED_000",
+            "colorCode": "ZZH",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_ZZH",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_ZZH",
             "sideSpoilerFolder": "EXT-K_001-BC_ZZH",
@@ -68,6 +73,7 @@
             "name": "Arctic white",
             "folder": "Base_Prl.Arctic_white",
             "fileName": "${variantName}_BASE _Prl.Arctic white_000",
+            "colorCode": "ZHJ",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_ZHJ",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_ZHJ",
             "sideSpoilerFolder": "EXT-K_001-BC_ZHJ",
@@ -78,6 +84,7 @@
             "name": "Midnight Black",
             "folder": "Base_Prme_Midnight_Black",
             "fileName": "${variantName}_BASE _Prme Midnight Black_000",
+            "colorCode": "ZAM",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_ZAM",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_ZAM",
             "sideSpoilerFolder": "EXT-K_001-BC_ZAM",
@@ -88,6 +95,7 @@
             "name": "Fire Red",
             "folder": "Base_Sld.Fire_Red",
             "fileName": "${variantName}_BASE_Sld.Fire Red_000",
+            "colorCode": "Z4Q",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_Z4Q",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_Z4Q",
             "sideSpoilerFolder": "EXT-K_001-BC_Z4Q",
@@ -98,6 +106,7 @@
             "name": "White",
             "folder": "Base_Sld.White",
             "fileName": "${variantName}_BASE _Sld.White_000",
+            "colorCode": "26U",
             "rareUpperSpoilerFolder": "EXT-A_001-BC_26U",
             "rareUnderSpoilerFolder": "EXT-L_001-BC_26U",
             "sideSpoilerFolder": "EXT-K_001-BC_26U",
@@ -121,6 +130,28 @@
         {
             "name": "Wheel Type 4",
             "folder": "EXT-WH_004-BG_A"
+        }
+    ],
+    "spoilers": [
+        {
+            "name": "Front Spoiler",
+            "folder": "EXT-J_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rare Upper Spolier",
+            "folder": "EXT-A_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rare Under Spoiler",
+            "folder": "EXT-L_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Side Spoiler",
+            "folder": "EXT-K_001-BC_${colorCode}",
+            "startingFrom": 1
         }
     ],
     "otherOptions": [

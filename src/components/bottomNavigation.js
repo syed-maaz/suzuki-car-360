@@ -15,20 +15,24 @@ import {
   updateSideSpoiler,
   updateFrontSpoiler,
   updateOtherOptions,
+  updateSpoilers,
 } from "../redux/carState.reducer";
 
-import { Modal, Header, Title, Body, Footer, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Iframe from "react-iframe";
 
 const BottomNavigationComponent = (props) => {
-  const { config } = useSelector((state) => state.config);
+  const { config } = props;
+  console.log(config);
+  // const { config } = useSelector((state) => state.config);
   const { carState } = useSelector((state) => state);
 
   const [variants, setVariants] = useState([]);
   const [colors, setColors] = useState([]);
   const [wheels, setWheels] = useState([]);
   const [otherOptions, setOtherOptions] = useState([]);
+  const [spoilers, setSpoilers] = useState([]);
 
   const [rareUpperSpoiler, setRareUpperSpoiler] = useState(false);
   const [rareUnderSpoiler, setRareUnderSpoiler] = useState(false);
@@ -39,6 +43,7 @@ const BottomNavigationComponent = (props) => {
   const [cVariant, setCVariant] = useState({});
   const [cColor, setCColor] = useState({});
   const [cOther, setCOther] = useState({});
+  const [cSpoiler, setCSpoiler] = useState({});
 
   const [isAllOtherOptionSelected, setIsAllOtherOptionSelected] = useState(
     false
@@ -105,6 +110,9 @@ const BottomNavigationComponent = (props) => {
     if (!!config && !!config.otherOptions) {
       setOtherOptions(config.otherOptions);
     }
+    if (!!config && !!config.spoilers) {
+      setSpoilers(config.spoilers);
+    }
   }, [config]);
 
   useEffect(() => {
@@ -142,6 +150,20 @@ const BottomNavigationComponent = (props) => {
 
   const isOptionActive = (name) => {
     return !!cOther[name];
+  };
+
+  const isSpoilerActive = (name) => {
+    return !!cSpoiler[name];
+  };
+
+  const updateSpoilers = (op) => {
+    if (!!cSpoiler[op.name]) {
+      delete cSpoiler[op.name];
+    } else {
+      cSpoiler[op.name] = op;
+    }
+
+    props.updateSpoilers(cSpoiler);
   };
 
   const applyCarColorByIndex = (idx) => {
@@ -272,94 +294,29 @@ const BottomNavigationComponent = (props) => {
           </a>
           <div className="sub-menu">
             <ul>
-              {/* Front Under Spoiler */}
-              <li>
-                {frontSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateFrontSpoiler(!frontSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Front Under Spoiler
-                </a>
-              </li>
-              {/* Side Under Spoiler */}
-              <li>
-                {sideSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateSideSpoiler(!sideSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Side Under Spoiler
-                </a>
-              </li>
-              {/* Rare View Spoiler */}
-              <li>
-                {rareUpperSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateRareUpperSpoiler(!rareUpperSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Rear Upper Spoiler
-                </a>
-              </li>
-              {/* Rare Under Spoiler */}
-              <li>
-                {rareUnderSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateRareUnderSpoiler(!rareUnderSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Rear Under Spoiler
-                </a>
-              </li>
+              {!!spoilers.length &&
+                spoilers.map((d, i) => (
+                  <li key={i} onClick={(e) => updateSpoilers(d)}>
+                    {isSpoilerActive(d.name) ? (
+                      <>
+                        <i
+                          className="fas fa-check-circle"
+                          style={{ color: "green" }}
+                        ></i>{" "}
+                      </>
+                    ) : (
+                      " "
+                    )}
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                      }}
+                    >
+                      {d.name}
+                    </a>
+                  </li>
+                ))}
             </ul>
           </div>
         </li>
@@ -502,4 +459,5 @@ export default connect(null, {
   updateSideSpoiler,
   updateFrontSpoiler,
   updateOtherOptions,
+  updateSpoilers,
 })(BottomNavigationComponent);

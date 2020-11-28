@@ -12,6 +12,7 @@ export const UPDATE_SIDE_SPOILER = "UPDATE_SIDE_SPOILER";
 export const UPDATE_FRONT_SPOILER = "UPDATE_FRONT_SPOILER";
 export const UPDATE_OTHER_OPTION = "UPDATE_OTHER_OPTION";
 export const UPDATE_VARIANT_STATINGFROM = "UPDATE_VARIANT_STATINGFROM";
+export const UPDATE_SPOILERS = "UPDATE_SPOILERS";
 
 /**
  * Actions
@@ -89,6 +90,13 @@ export const updateBasePath = (value) => {
 export const updateVariantStartFrom = (value) => {
   return {
     type: UPDATE_VARIANT_STATINGFROM,
+    value,
+  };
+};
+
+export const updateSpoilers = (value) => {
+  return {
+    type: UPDATE_SPOILERS,
     value,
   };
 };
@@ -178,6 +186,12 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         variantStartingFrom: action.value,
+      };
+
+    case UPDATE_SPOILERS:
+      return {
+        ...state,
+        spoilers: action.value,
       };
 
     default:

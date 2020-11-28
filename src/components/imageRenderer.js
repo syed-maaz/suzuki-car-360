@@ -19,6 +19,7 @@ const ImageRendererComponent = (props) => {
     frontSpoiler,
     basePath,
     startingFrom,
+    spoilers,
   } = props;
 
   const [loadedNumComp, setLoadedNumComp] = useState(0);
@@ -52,7 +53,7 @@ const ImageRendererComponent = (props) => {
   };
 
   const getVariantSrc = (angle) => {
-    console.log(startingFrom);
+    // console.log(startingFrom);
     let calAngle = parseInt(angle) + parseInt(variant.variantStartFrom);
     calAngle = ("0" + calAngle).slice(-2);
 
@@ -102,6 +103,31 @@ const ImageRendererComponent = (props) => {
     return `${basePath}/${color.frontSpoilerFolder}/${color.frontSpoilerFolder}_${angle}.png`;
   };
 
+  const renderSpoilers = (an) => {
+    if (spoilers && Object.keys(spoilers).length) {
+      return Object.keys(spoilers).map((item, i) => {
+        let src = "";
+        if (!spoilers[item]) {
+          return;
+        }
+
+        let angle = an;
+        angle = parseInt(angle) + parseInt(spoilers[item].startingFrom);
+        angle = ("0" + angle).slice(-2);
+        console.log(spoilers[item]);
+        const folder = fillTemplate(`${spoilers[item].folder}`, {
+          colorCode: color.colorCode,
+        });
+        // spoilers[item].folder;
+        src = `${basePath}/${folder}/${folder}_${angle}.png`;
+
+        return (
+          <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
+        );
+      });
+    }
+  };
+
   const renderOtherOption = (an) => {
     if (Object.keys(otherOptions).length) {
       return Object.keys(otherOptions).map((item, i) => {
@@ -116,10 +142,10 @@ const ImageRendererComponent = (props) => {
 
         if (!!otherOptions[item].reference) {
           const ref = otherOptions[item].reference;
-          src = `images/baleno-items/${color[ref]}/${color[ref]}_${angle}.png`;
+          src = `${basePath}/${color[ref]}/${color[ref]}_${angle}.png`;
         } else if (!!otherOptions[item].folder) {
           const folder = otherOptions[item].folder;
-          src = `images/baleno-items/${folder}/${folder}_${angle}.png`;
+          src = `${basePath}/${folder}/${folder}_${angle}.png`;
         }
         return (
           <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
@@ -164,7 +190,7 @@ const ImageRendererComponent = (props) => {
         onLoad={(e) => setIsWheelLoading(false)}
         className="w-full absolute left-0 bottom-0"
       />
-      {!!rareUpperSpoiler ? (
+      {/* {!!rareUpperSpoiler ? (
         <img
           src={getRareSpoilertSrc(i)}
           onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
@@ -199,7 +225,8 @@ const ImageRendererComponent = (props) => {
         />
       ) : (
         " "
-      )}
+      )} */}
+      {renderSpoilers(i)}
       {renderOtherOption(i)}
     </div>
   );
