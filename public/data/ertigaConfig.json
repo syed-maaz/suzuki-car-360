@@ -18,91 +18,57 @@
             "name": "Burgundy Red Pearl",
             "folder": "Burgundy Red Pearl",
             "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZLL_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZYR",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZYR",
-            "sideSpoilerFolder": "EXT-K_001-BC_ZYR",
-            "frontSpoilerFolder": "EXT-J_001-BC_ZYR",
+            "colorCode": "ZLL",
+            "colorHash": "#990033",
             "parkingSensor": "EXT-H_001-BC_ZYR"
         },
         {
-            "name": "Granite Gray",
-            "folder": "_Base_Met_Granite_Gray",
-            "fileName": "_BASE _Met Granite Gray_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZTN",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZTN",
-            "sideSpoilerFolder": "EXT-K_001-BC_ZTN",
-            "frontSpoilerFolder": "EXT-J_001-BC_ZTN",
+            "name": "Cool Black Pearl Metallic",
+            "folder": "Cool Black Pearl Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZBD_000",
+            "colorCode": "ZBD",
+            "colorHash": "#08112f",
             "parkingSensor": "EXT-H_001-BC_ZTN"
         },
         {
-            "name": "Magma Grey",
-            "folder": "_Base_Met.Magma_Grey",
-            "fileName": "_BASE _Met.Magma Grey_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_Z7Q",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_Z7Q",
-            "sideSpoilerFolder": "EXT-K_001-BC_Z7Q",
-            "frontSpoilerFolder": "EXT-J_001-BC_Z7Q",
+            "name": "Glorious Brown Pearl",
+            "folder": "Glorious Brown Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_WAE_000",
+            "colorCode": "WAE",
+            "colorHash": "#B5651E",
             "parkingSensor": "EXT-H_001-BC_Z7Q"
         },
         {
-            "name": "Premium Silver",
-            "folder": "_Base_Met.Premium_Silver",
-            "fileName": "_BASE _Met.Premium Silver_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZQS",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZQS",
-            "sideSpoilerFolder": "EXT-K_001-BC_ZQS",
-            "frontSpoilerFolder": "EXT-J_001-BC_ZQS",
+            "name": "Magma Gray Metallic",
+            "folder": "Magma Gray Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZYZ_000",
+            "colorCode": "ZYZ",
+            "colorHash": "#ff4e01",
             "parkingSensor": "EXT-H_001-BC_ZQS"
         },
         {
-            "name": "PHOENIX RED",
-            "folder": "_Base_PHOENIX_RED",
-            "fileName": "_BASE _PHOENIX_RED_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZZH",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZZH",
-            "sideSpoilerFolder": "EXT-K_001-BC_ZZH",
-            "frontSpoilerFolder": "EXT-J_001-BC_ZZH",
+            "name": "Radiant Red Pearl",
+            "folder": "Radiant Red Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZKB_000",
+            "colorCode": "ZKB",
+            "colorHash": "#ce2029",
             "parkingSensor": "EXT-H_001-BC_ZZH"
         },
         {
-            "name": "Arctic white",
-            "folder": "_Base_Prl.Arctic_white",
-            "fileName": "_BASE _Prl.Arctic white_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZHJ",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZHJ",
-            "sideSpoilerFolder": "EXT-K_001-BC_ZHJ",
-            "frontSpoilerFolder": "EXT-J_001-BC_ZHJ",
+            "name": "Silky Silver Metallic",
+            "folder": "Silky Silver Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_Z2S_000",
+            "colorCode": "Z2S",
+            "colorHash": "#aaa9ad",
             "parkingSensor": "EXT-H_001-BC_ZHJ"
         },
         {
-            "name": "Midnight Black",
-            "folder": "_Base_Prme_Midnight_Black",
-            "fileName": "_BASE _Prme Midnight Black_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_ZAM",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_ZAM",
-            "sideSpoilerFolder": "EXT-K_001-BC_ZAM",
-            "frontSpoilerFolder": "EXT-J_001-BC_ZAM",
+            "name": "Snow White Pearl",
+            "folder": "Snow White Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZQZ_000",
+            "colorCode": "ZQZ",
+            "colorHash": "#FFFAFA",
             "parkingSensor": "EXT-H_001-BC_ZAM"
-        },
-        {
-            "name": "Fire Red",
-            "folder": "_Base_Sld.Fire_Red",
-            "fileName": "_BASE_Sld.Fire Red_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_Z4Q",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_Z4Q",
-            "sideSpoilerFolder": "EXT-K_001-BC_Z4Q",
-            "frontSpoilerFolder": "EXT-J_001-BC_Z4Q",
-            "parkingSensor": "EXT-H_001-BC_Z4Q"
-        },
-        {
-            "name": "White",
-            "folder": "_Base_Sld.White",
-            "fileName": "_BASE _Sld.White_000",
-            "rareUpperSpoilerFolder": "EXT-A_001-BC_26U",
-            "rareUnderSpoilerFolder": "EXT-L_001-BC_26U",
-            "sideSpoilerFolder": "EXT-K_001-BC_26U",
-            "frontSpoilerFolder": "EXT-J_001-BC_26U",
-            "parkingSensor": "EXT-H_001-BC_26U"
         }
     ],
     "wheels": [
@@ -119,40 +85,26 @@
             "folder": "EXT-WH_003-BG_A"
         }
     ],
+    "spoilers": [],
     "otherOptions": [
         {
             "name": "Parking Sensor",
-            "reference": "parkingSensor",
+            "folder": "EXT-Parking-sensor_001-BC_${colorCode}",
             "startingFrom": 1
         },
         {
-            "name": "Back Window Chrome",
-            "folder": "EXT-B_001",
+            "name": "Mud Guard",
+            "folder": "EXT-Mud-Guard_001",
             "startingFrom": 1
         },
         {
-            "name": "Back Camera",
-            "folder": "EXT-I_001",
+            "name": "Rare Window Defogger",
+            "folder": "EXT-Rear-window-defogger_003",
             "startingFrom": 1
         },
         {
-            "name": "Tinted Glasses",
-            "folder": "EXT-D_001",
-            "startingFrom": 1
-        },
-        {
-            "name": "Stylish Fog Light",
-            "folder": "EXT-F_001",
-            "startingFrom": 1
-        },
-        {
-            "name": "No Fog Light",
-            "folder": "EXT-C_001",
-            "startingFrom": 1
-        },
-        {
-            "name": "Chrome Break Lights",
-            "folder": "EXT-G_001",
+            "name": "Roof Rail",
+            "folder": "EXT-Roof-rail_001",
             "startingFrom": 1
         }
     ]

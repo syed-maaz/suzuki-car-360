@@ -144,7 +144,9 @@ const ImageRendererComponent = (props) => {
           const ref = otherOptions[item].reference;
           src = `${basePath}/${color[ref]}/${color[ref]}_${angle}.png`;
         } else if (!!otherOptions[item].folder) {
-          const folder = otherOptions[item].folder;
+          const folder = fillTemplate(`${otherOptions[item].folder}`, {
+            colorCode: color.colorCode,
+          });
           src = `${basePath}/${folder}/${folder}_${angle}.png`;
         }
         return (

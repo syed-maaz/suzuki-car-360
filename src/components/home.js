@@ -82,7 +82,8 @@ const HomePageComponent = (props) => {
       e.pageX ||
       (e.targetTouches && e.targetTouches[0]
         ? e.targetTouches[0].pageX
-        : e.changedTouches[e.changedTouches.length - 1].pageX);
+        : e.changedTouches &&
+          e.changedTouches[e.changedTouches.length - 1].pageX);
     setIsRotateActive(true);
     setPrevPosX(pageX);
   };
@@ -94,7 +95,8 @@ const HomePageComponent = (props) => {
         e.pageX ||
         (e.targetTouches && e.targetTouches[0]
           ? e.targetTouches[0].pageX
-          : e.changedTouches[e.changedTouches.length - 1].pageX);
+          : e.changedTouches &&
+            e.changedTouches[e.changedTouches.length - 1].pageX);
       if (moveFactor > 0) {
         if (pageX % moveFactor != 0) return;
       }

@@ -54,55 +54,15 @@ const BottomNavigationComponent = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [donutData, setDonutData] = useState({
-    datasets: [
-      {
-        data: [40, 40, 40, 40, 40, 40, 40, 40, 40],
-        backgroundColor: [
-          "#0000FF",
-          "#676767",
-          "#6D6D64",
-          "#c0c0c0",
-          "#f92420",
-          "#f4f3ef",
-          "#1b1e23",
-          "#ce2029",
-          "#ffffff",
-        ],
-        hoverBackgroundColor: [
-          "#0000FF",
-          "#676767",
-          "#6D6D64",
-          "#c0c0c0",
-          "#f92420",
-          "#f4f3ef",
-          "#1b1e23",
-          "#ce2029",
-          "#ffffff",
-        ],
-      },
-    ],
-
-    labels: [
-      "Blue",
-      "Granite Gray",
-      "Magma Grey",
-      "Premium Silver",
-      "PHOENIX RED",
-      "Arctic white",
-      "Midnight Black",
-      "Fire Red",
-      "White",
-    ],
-  });
+  const [donutData, setDonutData] = useState({});
 
   useEffect(() => {
-    console.log(config);
+    // console.log(config);
     if (!!config && !!config.variants) {
       setVariants(config.variants);
     }
     if (!!config && !!config.colors) {
-      setColors(config.colors);
+      configColorDonut(config.colors);
     }
     if (!!config && !!config.wheels) {
       setWheels(config.wheels);
@@ -116,7 +76,7 @@ const BottomNavigationComponent = (props) => {
   }, [config]);
 
   useEffect(() => {
-    console.log(carState);
+    // console.log(carState);
     if (!!carState) {
       if (!!carState.variant) {
         setCVariant(carState.variant);
@@ -137,6 +97,23 @@ const BottomNavigationComponent = (props) => {
       setSideSpoiler(carState.sideSpoiler);
     }
   }, [carState]);
+
+  const configColorDonut = (colors) => {
+    setColors(colors);
+    const donutData = {};
+    const datasets = {};
+
+    datasets.backgroundColor = colors.map((d) => d.colorHash);
+    datasets.data = [...Array(colors.length)].map(
+      (e, index) => 360 / colors.length
+    );
+
+    donutData.labels = colors.map((d) => d.name);
+    donutData.datasets = new Array(datasets);
+
+    setDonutData(donutData);
+    console.log(donutData);
+  };
 
   const updateOtherOptions = (op) => {
     if (!!cOther[op.name]) {
@@ -168,6 +145,40 @@ const BottomNavigationComponent = (props) => {
 
   const applyCarColorByIndex = (idx) => {
     props.updateColorAction(colors[idx]);
+  };
+
+  const renderColorDonut = (donutData) => {
+    console.log(donutData);
+    return (
+      <>
+        <Doughnut
+          data={donutData}
+          options={{
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function (tooltipItem, data) {
+                  return data.labels[tooltipItem.index];
+                },
+              },
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            onClick: (event, elements) => {
+              const chart = elements[0]._chart;
+              const element = chart.getElementAtEvent(event)[0];
+              const dataset = chart.data.datasets[element._datasetIndex];
+              const xLabel = chart.data.labels[element._index];
+              const value = dataset.data[element._index];
+
+              applyCarColorByIndex(element._index);
+            },
+          }}
+        />
+      </>
+    );
   };
 
   return (
@@ -226,40 +237,14 @@ const BottomNavigationComponent = (props) => {
           <div
             className="sub-menu"
             style={{
-              height: "inherit",
+              height: "150px",
               width: "274px",
               top: "-150px",
               left: "-112px",
               background: "none",
             }}
           >
-            <Doughnut
-              data={donutData}
-              options={{
-                legend: {
-                  display: false,
-                },
-                tooltips: {
-                  callbacks: {
-                    label: function (tooltipItem, data) {
-                      return data.labels[tooltipItem.index];
-                    },
-                  },
-                },
-                responsive: true,
-                maintainAspectRatio: true,
-                onClick: (event, elements) => {
-                  const chart = elements[0]._chart;
-                  const element = chart.getElementAtEvent(event)[0];
-                  const dataset = chart.data.datasets[element._datasetIndex];
-                  const xLabel = chart.data.labels[element._index];
-                  const value = dataset.data[element._index];
-                  console.log(element._index);
-                  console.log(dataset + " at " + xLabel + ": " + value);
-                  applyCarColorByIndex(element._index);
-                },
-              }}
-            />
+            {renderColorDonut(donutData)}
           </div>
         </li>
         <li className="w-full">
