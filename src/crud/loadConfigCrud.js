@@ -1,5 +1,10 @@
 import axios from "axios";
 
-export function loadConfig() {
-  return axios.get("data/config.json");
+export async function loadCarsConfig() {
+  const { data } = await axios.get("data/carsConfig.json");
+  return data;
+}
+
+export function loadConfigByMeta(meta) {
+  return axios.get(meta.path);
 }

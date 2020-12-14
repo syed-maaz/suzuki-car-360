@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import configReducer from "./data.reducer";
+import configReducer from "./config.reducer";
 import carStateReducer from "./carState.reducer";
 
 const rootReducer = combineReducers({

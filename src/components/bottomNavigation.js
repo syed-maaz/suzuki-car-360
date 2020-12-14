@@ -15,20 +15,24 @@ import {
   updateSideSpoiler,
   updateFrontSpoiler,
   updateOtherOptions,
+  updateSpoilers,
 } from "../redux/carState.reducer";
 
-import { Modal, Header, Title, Body, Footer, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Iframe from "react-iframe";
 
 const BottomNavigationComponent = (props) => {
-  const { config } = useSelector((state) => state.config);
+  const { config } = props;
+  console.log(config);
+  // const { config } = useSelector((state) => state.config);
   const { carState } = useSelector((state) => state);
 
   const [variants, setVariants] = useState([]);
   const [colors, setColors] = useState([]);
   const [wheels, setWheels] = useState([]);
   const [otherOptions, setOtherOptions] = useState([]);
+  const [spoilers, setSpoilers] = useState([]);
 
   const [rareUpperSpoiler, setRareUpperSpoiler] = useState(false);
   const [rareUnderSpoiler, setRareUnderSpoiler] = useState(false);
@@ -39,6 +43,7 @@ const BottomNavigationComponent = (props) => {
   const [cVariant, setCVariant] = useState({});
   const [cColor, setCColor] = useState({});
   const [cOther, setCOther] = useState({});
+  const [cSpoiler, setCSpoiler] = useState({});
 
   const [isAllOtherOptionSelected, setIsAllOtherOptionSelected] = useState(
     false
@@ -49,54 +54,15 @@ const BottomNavigationComponent = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [donutData, setDonutData] = useState({
-    datasets: [
-      {
-        data: [40, 40, 40, 40, 40, 40, 40, 40, 40],
-        backgroundColor: [
-          "#0000FF",
-          "#676767",
-          "#6D6D64",
-          "#c0c0c0",
-          "#f92420",
-          "#f4f3ef",
-          "#1b1e23",
-          "#ce2029",
-          "#ffffff",
-        ],
-        hoverBackgroundColor: [
-          "#0000FF",
-          "#676767",
-          "#6D6D64",
-          "#c0c0c0",
-          "#f92420",
-          "#f4f3ef",
-          "#1b1e23",
-          "#ce2029",
-          "#ffffff",
-        ],
-      },
-    ],
-
-    labels: [
-      "Blue",
-      "Granite Gray",
-      "Magma Grey",
-      "Premium Silver",
-      "PHOENIX RED",
-      "Arctic white",
-      "Midnight Black",
-      "Fire Red",
-      "White",
-    ],
-  });
+  const [donutData, setDonutData] = useState({});
 
   useEffect(() => {
+    // console.log(config);
     if (!!config && !!config.variants) {
       setVariants(config.variants);
     }
     if (!!config && !!config.colors) {
-      setColors(config.colors);
+      configColorDonut(config.colors);
     }
     if (!!config && !!config.wheels) {
       setWheels(config.wheels);
@@ -104,9 +70,13 @@ const BottomNavigationComponent = (props) => {
     if (!!config && !!config.otherOptions) {
       setOtherOptions(config.otherOptions);
     }
+    if (!!config && !!config.spoilers) {
+      setSpoilers(config.spoilers);
+    }
   }, [config]);
 
   useEffect(() => {
+    // console.log(carState);
     if (!!carState) {
       if (!!carState.variant) {
         setCVariant(carState.variant);
@@ -128,6 +98,23 @@ const BottomNavigationComponent = (props) => {
     }
   }, [carState]);
 
+  const configColorDonut = (colors) => {
+    setColors(colors);
+    const donutData = {};
+    const datasets = {};
+
+    datasets.backgroundColor = colors.map((d) => d.colorHash);
+    datasets.data = [...Array(colors.length)].map(
+      (e, index) => 360 / colors.length
+    );
+
+    donutData.labels = colors.map((d) => d.name);
+    donutData.datasets = new Array(datasets);
+
+    setDonutData(donutData);
+    console.log(donutData);
+  };
+
   const updateOtherOptions = (op) => {
     if (!!cOther[op.name]) {
       delete cOther[op.name];
@@ -142,8 +129,56 @@ const BottomNavigationComponent = (props) => {
     return !!cOther[name];
   };
 
+  const isSpoilerActive = (name) => {
+    return !!cSpoiler[name];
+  };
+
+  const updateSpoilers = (op) => {
+    if (!!cSpoiler[op.name]) {
+      delete cSpoiler[op.name];
+    } else {
+      cSpoiler[op.name] = op;
+    }
+
+    props.updateSpoilers(cSpoiler);
+  };
+
   const applyCarColorByIndex = (idx) => {
     props.updateColorAction(colors[idx]);
+  };
+
+  const renderColorDonut = (donutData) => {
+    console.log(donutData);
+    return (
+      <>
+        <Doughnut
+          data={donutData}
+          options={{
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function (tooltipItem, data) {
+                  return data.labels[tooltipItem.index];
+                },
+              },
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            onClick: (event, elements) => {
+              const chart = elements[0]._chart;
+              const element = chart.getElementAtEvent(event)[0];
+              const dataset = chart.data.datasets[element._datasetIndex];
+              const xLabel = chart.data.labels[element._index];
+              const value = dataset.data[element._index];
+
+              applyCarColorByIndex(element._index);
+            },
+          }}
+        />
+      </>
+    );
   };
 
   return (
@@ -165,12 +200,12 @@ const BottomNavigationComponent = (props) => {
         </Modal.Body>
       </Modal>
       <ul className="flex space-x-px md:space-x-1 items-center">
-        <li class="w-full">
+        <li className="w-full">
           <button className="h-12 px-3 md:px-10 md:rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300">
             Exterior
           </button>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Car Type
           </a>
@@ -202,43 +237,17 @@ const BottomNavigationComponent = (props) => {
           <div
             className="sub-menu"
             style={{
-              height: "inherit",
+              height: "150px",
               width: "274px",
               top: "-150px",
               left: "-112px",
-              background: 'none'
+              background: "none",
             }}
           >
-            <Doughnut
-              data={donutData}
-              options={{
-                legend: {
-                  display: false,
-                },
-                tooltips: {
-                  callbacks: {
-                    label: function (tooltipItem, data) {
-                      return data.labels[tooltipItem.index];
-                    },
-                  },
-                },
-                responsive: true,
-                maintainAspectRatio: true,
-                onClick: (event, elements) => {
-                  const chart = elements[0]._chart;
-                  const element = chart.getElementAtEvent(event)[0];
-                  const dataset = chart.data.datasets[element._datasetIndex];
-                  const xLabel = chart.data.labels[element._index];
-                  const value = dataset.data[element._index];
-                  console.log(element._index);
-                  console.log(dataset + " at " + xLabel + ": " + value);
-                  applyCarColorByIndex(element._index);
-                },
-              }}
-            />
+            {renderColorDonut(donutData)}
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Wheels
           </a>
@@ -264,104 +273,39 @@ const BottomNavigationComponent = (props) => {
           </div>
         </li>
         {/* Spoilers */}
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Setting
           </a>
           <div className="sub-menu">
             <ul>
-              {/* Front Under Spoiler */}
-              <li>
-                {frontSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateFrontSpoiler(!frontSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Front Under Spoiler
-                </a>
-              </li>
-              {/* Side Under Spoiler */}
-              <li>
-                {sideSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateSideSpoiler(!sideSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Side Under Spoiler
-                </a>
-              </li>
-              {/* Rare View Spoiler */}
-              <li>
-                {rareUpperSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateRareUpperSpoiler(!rareUpperSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Rear Upper Spoiler
-                </a>
-              </li>
-              {/* Rare Under Spoiler */}
-              <li>
-                {rareUnderSpoiler ? (
-                  <>
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: "green" }}
-                    ></i>{" "}
-                  </>
-                ) : (
-                  " "
-                )}
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    props.updateRareUnderSpoiler(!rareUnderSpoiler);
-                    e.preventDefault();
-                  }}
-                >
-                  Rear Under Spoiler
-                </a>
-              </li>
+              {!!spoilers.length &&
+                spoilers.map((d, i) => (
+                  <li key={i} onClick={(e) => updateSpoilers(d)}>
+                    {isSpoilerActive(d.name) ? (
+                      <>
+                        <i
+                          className="fas fa-check-circle"
+                          style={{ color: "green" }}
+                        ></i>{" "}
+                      </>
+                    ) : (
+                      " "
+                    )}
+                    <a
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                      }}
+                    >
+                      {d.name}
+                    </a>
+                  </li>
+                ))}
             </ul>
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Other Options
           </a>
@@ -414,7 +358,7 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <a className="h-12 md:rounded text-white w-full md:w-12" href="#">
             Variant
           </a>
@@ -478,7 +422,7 @@ const BottomNavigationComponent = (props) => {
             </ul>
           </div>
         </li>
-        <li class="w-full">
+        <li className="w-full">
           <button
             className="right h-12 px-3 md:px-10 md:rounded text-white bg-black bg-opacity-75 hover:bg-opacity-100 transition ease-in-out duration-300"
             onClick={handleShow}
@@ -500,4 +444,5 @@ export default connect(null, {
   updateSideSpoiler,
   updateFrontSpoiler,
   updateOtherOptions,
+  updateSpoilers,
 })(BottomNavigationComponent);

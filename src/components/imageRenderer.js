@@ -17,11 +17,12 @@ const ImageRendererComponent = (props) => {
     rareUpperSpoiler,
     sideSpoiler,
     frontSpoiler,
-    activeNumOfParts,
+    basePath,
+    startingFrom,
+    spoilers,
   } = props;
 
   const [loadedNumComp, setLoadedNumComp] = useState(0);
-
   const [loadState, setLoadState] = useContext(ImageLoadContext);
 
   const [isVariantLoading, setIsVariantLoading] = useState(false);
@@ -43,62 +44,88 @@ const ImageRendererComponent = (props) => {
     }
   }, [wheel]);
 
-  // useEffect(() => {
-  //   console.log(activeNumOfParts);
-  //   if (!prevProps) return;
-  //   if (
-  //     activeNumOfParts > 0 &&
-  //     prevProps.activeNumOfParts !== activeNumOfParts
-  //   ) {
-  //     setLoadedNumComp(activeNumOfParts);
-  //   }
-  // }, [activeNumOfParts]);
+  const fillTemplate = function (templateString, templateVars) {
+    var func = new Function(
+      ...Object.keys(templateVars),
+      "return `" + templateString + "`;"
+    );
+    return func(...Object.values(templateVars));
+  };
 
   const getVariantSrc = (angle) => {
-    angle = ("0" + angle).slice(-2);
+    // console.log(startingFrom);
+    let calAngle = parseInt(angle) + parseInt(variant.variantStartFrom);
+    calAngle = ("0" + calAngle).slice(-2);
+
     const variantFolder = variant.folder;
     const variantName = variant.name;
-    const colorFolder = `${variantName}${color.folder}`;
+    const colorFolder = fillTemplate(`${color.folder}`, { variantName });
+    const fileName = fillTemplate(`${color.fileName}`, { variantName });
 
-    return `images/baleno-items/${variantFolder}/${colorFolder}/${variantName}${color.fileName}${angle}.png`;
+    return `${basePath}/${variantFolder}/${colorFolder}/${fileName}${calAngle}.png`;
   };
 
   const getWheeltSrc = (angle) => {
     angle = angle + 1;
     angle = ("0" + angle).slice(-2);
 
-    return `images/baleno-items/${wheel.folder}/${wheel.folder}_${angle}.png`;
+    return `${basePath}/${wheel.folder}/${wheel.folder}_${angle}.png`;
   };
 
   const getShadowtSrc = (angle) => {
     angle = angle;
     angle = ("0" + angle).slice(-2);
-    return `images/baleno-items/shadow/shadow_000${angle}.png`;
+    return `${basePath}/shadow/shadow_000${angle}.png`;
   };
 
   const getRareSpoilertSrc = (angle) => {
     angle = angle + 1;
     angle = ("0" + angle).slice(-2);
 
-    return `images/baleno-items/${color.rareUpperSpoilerFolder}/${color.rareUpperSpoilerFolder}_${angle}.png`;
+    return `${basePath}/${color.rareUpperSpoilerFolder}/${color.rareUpperSpoilerFolder}_${angle}.png`;
   };
 
   const getRareUnderSpoilertSrc = (angle) => {
     angle = angle + 1;
     angle = ("0" + angle).slice(-2);
-    return `images/baleno-items/${color.rareUnderSpoilerFolder}/${color.rareUnderSpoilerFolder}_${angle}.png`;
+    return `${basePath}/${color.rareUnderSpoilerFolder}/${color.rareUnderSpoilerFolder}_${angle}.png`;
   };
 
   const getSideSpoilertSrc = (angle) => {
     angle = angle + 1;
     angle = ("0" + angle).slice(-2);
-    return `images/baleno-items/${color.sideSpoilerFolder}/${color.sideSpoilerFolder}_${angle}.png`;
+    return `${basePath}/${color.sideSpoilerFolder}/${color.sideSpoilerFolder}_${angle}.png`;
   };
 
   const getFrontSpoilertSrc = (angle) => {
     angle = angle + 1;
     angle = ("0" + angle).slice(-2);
-    return `images/baleno-items/${color.frontSpoilerFolder}/${color.frontSpoilerFolder}_${angle}.png`;
+    return `${basePath}/${color.frontSpoilerFolder}/${color.frontSpoilerFolder}_${angle}.png`;
+  };
+
+  const renderSpoilers = (an) => {
+    if (spoilers && Object.keys(spoilers).length) {
+      return Object.keys(spoilers).map((item, i) => {
+        let src = "";
+        if (!spoilers[item]) {
+          return;
+        }
+
+        let angle = an;
+        angle = parseInt(angle) + parseInt(spoilers[item].startingFrom);
+        angle = ("0" + angle).slice(-2);
+        console.log(spoilers[item]);
+        const folder = fillTemplate(`${spoilers[item].folder}`, {
+          colorCode: color.colorCode,
+        });
+        // spoilers[item].folder;
+        src = `${basePath}/${folder}/${folder}_${angle}.png`;
+
+        return (
+          <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
+        );
+      });
+    }
   };
 
   const renderOtherOption = (an) => {
@@ -115,10 +142,12 @@ const ImageRendererComponent = (props) => {
 
         if (!!otherOptions[item].reference) {
           const ref = otherOptions[item].reference;
-          src = `images/baleno-items/${color[ref]}/${color[ref]}_${angle}.png`;
+          src = `${basePath}/${color[ref]}/${color[ref]}_${angle}.png`;
         } else if (!!otherOptions[item].folder) {
-          const folder = otherOptions[item].folder;
-          src = `images/baleno-items/${folder}/${folder}_${angle}.png`;
+          const folder = fillTemplate(`${otherOptions[item].folder}`, {
+            colorCode: color.colorCode,
+          });
+          src = `${basePath}/${folder}/${folder}_${angle}.png`;
         }
         return (
           <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
@@ -163,7 +192,7 @@ const ImageRendererComponent = (props) => {
         onLoad={(e) => setIsWheelLoading(false)}
         className="w-full absolute left-0 bottom-0"
       />
-      {!!rareUpperSpoiler ? (
+      {/* {!!rareUpperSpoiler ? (
         <img
           src={getRareSpoilertSrc(i)}
           onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
@@ -198,7 +227,8 @@ const ImageRendererComponent = (props) => {
         />
       ) : (
         " "
-      )}
+      )} */}
+      {renderSpoilers(i)}
       {renderOtherOption(i)}
     </div>
   );

@@ -21,6 +21,9 @@ const CarExteriorComponent = (props) => {
   const [sideSpoiler, setSideSpoiler] = useState(false);
   const [frontSpoiler, setFrontSpoiler] = useState(false);
   const [otherOptions, setOtherOptions] = useState([]);
+  const [basePath, setBasePath] = useState([]);
+  const [startingFrom, setStartingFrom] = useState([]);
+  const [spoilers, setSpoilers] = useState({});
 
   const [render, setRender] = useState(0);
 
@@ -30,6 +33,7 @@ const CarExteriorComponent = (props) => {
 
   useEffect(() => {
     if (!!carState) {
+      console.log(carState);
       if (!!carState.angle) {
         setAngle(carState.angle);
       }
@@ -51,6 +55,11 @@ const CarExteriorComponent = (props) => {
       setSideSpoiler(carState.sideSpoiler);
       setFrontSpoiler(carState.frontSpoiler);
 
+      setBasePath(carState.basePath);
+      setStartingFrom(carState.variantStartingFrom);
+
+      setSpoilers(carState.spoilers);
+
       setRender(render + 1);
 
       calculateNumOfComp({ ...carState });
@@ -58,7 +67,6 @@ const CarExteriorComponent = (props) => {
   }, [carState]);
 
   const calculateNumOfComp = (carState) => {
-    console.log("carState");
     let total = 3;
     if (carState.rareUpperSpoiler) {
       total = total + 1;
@@ -93,7 +101,10 @@ const CarExteriorComponent = (props) => {
             sideSpoiler={sideSpoiler}
             frontSpoiler={frontSpoiler}
             activeNumOfParts={totalActiveComp}
+            basePath={basePath}
+            startingFrom={startingFrom}
             render={render}
+            spoilers={spoilers}
           />
         ))}
       </div>

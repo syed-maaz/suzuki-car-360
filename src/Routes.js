@@ -22,7 +22,7 @@ export function Routes() {
 */
   return (
     <Switch>
-      <Route path="/" component={HomePageComponent} exact />
+      <Route path="/:carName?" component={HomePageComponent} exact />
       {/* <Route path="/interior" component={About} /> */}
     </Switch>
   );
