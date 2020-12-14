@@ -1,0 +1,131 @@
+{
+    "basePath": "images/Vitara_360_Viewer",
+    "variantStartFrom": 1,
+    "variants": [
+        {
+            "name": "GL",
+            "folder": "GL",
+            "variantStartFrom": 1
+        },
+        {
+            "name": "GLP",
+            "folder": "GLP",
+            "variantStartFrom": 1
+        },
+        {
+            "name": "GLX",
+            "folder": "GLX",
+            "variantStartFrom": 1
+        }
+    ],
+    "colors": [
+        {
+            "name": "EXT-GRD_BG_A-BC_26U",
+            "folder": "EXT-GRD_BG_A-BC_26U",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_26U_",
+            "colorCode": "2BW2",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZCC",
+            "folder": "EXT-GRD_BG_A-BC_ZCC",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZCC_",
+            "colorCode": "ZCC",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZCD",
+            "folder": "EXT-GRD_BG_A-BC_ZCD",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZCD_",
+            "colorCode": "ZCD",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZCE",
+            "folder": "EXT-GRD_BG_A-BC_ZCE",
+            "fileName": "EXT-GRD_GL-BG_A-BC_ZCE_",
+            "colorCode": "ZCE",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZCF",
+            "folder": "EXT-GRD_BG_A-BC_ZCF",
+            "fileName": "EXT-GRD_GL-BG_A-BC_ZCF_",
+            "colorCode": "ZCF",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZNL",
+            "folder": "EXT-GRD_BG_A-BC_ZNL",
+            "fileName": "EXT-GRD_GL-BG_A-BC_ZNL_",
+            "colorCode": "ZNL",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZQN",
+            "folder": "EXT-GRD_BG_A-BC_ZQN",
+            "fileName": "EXT-GRD_GL-BG_A-BC_ZQN_",
+            "colorCode": "ZQN",
+            "colorHash": ""
+        }
+    ],
+    "wheels": [
+        {
+            "name": "Wheel Type 1",
+            "folder": "EXT-WH_001-BG_A"
+        },
+        {
+            "name": "Wheel Type 2",
+            "folder": "EXT-WH_002-BG_A"
+        },
+        {
+            "name": "Wheel Type 3",
+            "folder": "EXT-WH_003-BG_A"
+        },
+        {
+            "name": "Wheel Type 4",
+            "folder": "EXT-WH_004-BG_A"
+        },
+        {
+            "name": "Wheel Type 5",
+            "folder": "EXT-WH_005-BG_A"
+        }
+    ],
+    "otherOptions": [
+        {
+            "name": "Parking Sensor",
+            "reference": "parkingSensor",
+            "startingFrom": 1
+        },
+        {
+            "name": "Back Window Chrome",
+            "folder": "EXT-B_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Back Camera",
+            "folder": "EXT-I_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Tinted Glasses",
+            "folder": "EXT-D_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Stylish Fog Light",
+            "folder": "EXT-F_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "No Fog Light",
+            "folder": "EXT-C_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Chrome Break Lights",
+            "folder": "EXT-G_001",
+            "startingFrom": 1
+        }
+    ]
+}

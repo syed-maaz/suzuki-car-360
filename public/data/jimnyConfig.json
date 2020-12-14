@@ -1,0 +1,121 @@
+{
+    "basePath": "images/JIMNY_360_Viewer",
+    "variantStartFrom": 1,
+    "variants": [
+        {
+            "name": "GA",
+            "folder": "GA BASE",
+            "variantStartFrom": 1
+        },
+        {
+            "name": "GL",
+            "folder": "GL BASE",
+            "variantStartFrom": 1
+        },
+        {
+            "name": "GLX",
+            "folder": "GLX BASE",
+            "variantStartFrom": 1
+        }
+    ],
+    "colors": [
+        {
+            "name": "EXT-GRD_GA-BG_A-BC_2BW2",
+            "folder": "EXT-GRD_BG_A-BC_2BW2",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_2BW2_",
+            "colorCode": "2BW2",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_26U",
+            "folder": "EXT-GRD_BG_A-BC_26U",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_26U_",
+            "colorCode": "26U",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_CZW2",
+            "folder": "EXT-GRD_BG_A-BC_CZW2",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_CZW2_",
+            "colorCode": "CZW2",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_DG52",
+            "folder": "EXT-GRD_BG_A-BC_DG52",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_DG52_",
+            "colorCode": "DG52",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_Z2S",
+            "folder": "EXT-GRD_BG_A-BC_Z2S",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_Z2S_",
+            "colorCode": "Z2S",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZJ3",
+            "folder": "EXT-GRD_BG_A-BC_ZJ3",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZJ3_",
+            "colorCode": "ZJ3",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZVL",
+            "folder": "EXT-GRD_BG_A-BC_ZVL",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZVL_",
+            "colorCode": "ZVL",
+            "colorHash": ""
+        },
+        {
+            "name": "EXT-GRD_BG_A-BC_ZZC",
+            "folder": "EXT-GRD_BG_A-BC_ZZC",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZZC_",
+            "colorCode": "ZZC",
+            "colorHash": ""
+        }
+    ],
+    "wheels": [
+        {
+            "name": "Wheel Type 1",
+            "folder": "EXT-WH_001-BG_A"
+        },
+        {
+            "name": "Wheel Type 2",
+            "folder": "EXT-WH_002-BG_A"
+        }
+    ],
+    "otherOptions": [
+        {
+            "name": "Back Window Chrome",
+            "folder": "EXT-B_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Front Bumper",
+            "folder": "EXT-I_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Tinted Glasses",
+            "folder": "EXT-D_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Stylish Fog Light",
+            "folder": "EXT-F_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "No Fog Light",
+            "folder": "EXT-C_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Chrome Break Lights",
+            "folder": "EXT-G_001",
+            "startingFrom": 1
+        }
+    ]
+}

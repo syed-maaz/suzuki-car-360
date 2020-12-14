@@ -1,0 +1,201 @@
+{
+    "basePath": "images/SWIFT_360_Viewer",
+    "variantStartFrom": 0,
+    "variants": [
+        {
+            "name": "GA",
+            "folder": "GA base",
+            "variantStartFrom": 1
+        },
+        {
+            "name": "GL",
+            "folder": "GL base",
+            "variantStartFrom": 1
+        },
+        {
+            "name": "GLX",
+            "folder": "GLX base",
+            "variantStartFrom": 1
+        }
+    ],
+    "colors": [
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_C7R_R",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_C7R_R",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_C7R_R_",
+            "colorCode": "C7R_R",
+            "colorHash": "#002147"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_CFK_R",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_CFK_R",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_CFK_R_",
+            "colorCode": "CFK_R",
+            "colorHash": "#ce2029"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_D7Z_R",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_D7Z_R",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_D7Z_R_",
+            "colorCode": "D7Z_R",
+            "colorHash": "#ce2029"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_D8A_R",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_D8A_R",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_D8A_R_",
+            "colorCode": "D8A_R",
+            "colorHash": "#c0c0c0"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_ZMV",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_ZMV",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZMV_",
+            "colorCode": "ZMV",
+            "colorHash": "#f92420"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_ZMW",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_ZMV",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZMW_",
+            "colorCode": "ZMW",
+            "colorHash": "#f4f3ef"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_ZNB",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_ZNB",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZNB_",
+            "colorCode": "ZNB",
+            "colorHash": "#1b1e23"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_ZNC",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_ZNC",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZNC_",
+            "colorCode": "Z4Q",
+            "colorHash": "#ce2029"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_ZVR",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_ZVR",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZVR_",
+            "colorCode": "ZVR",
+            "colorHash": "#ffffff"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_ZWG",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_ZWG",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZWG_",
+            "colorCode": "ZWG",
+            "colorHash": "#ffffff"
+        },
+        {
+            "name": "EXT-GRD_${variantName}-BG_A-BC_ZWP",
+            "folder": "EXT-GRD_${variantName}-BG_A-BC_ZWP",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZWP_",
+            "colorCode": "ZWP",
+            "colorHash": "#ffffff"
+        }
+    ],
+    "wheels": [
+        {
+            "name": "Wheel Type 1",
+            "folder": "EXT-WH_001-BG_A"
+        },
+        {
+            "name": "Wheel Type 2",
+            "folder": "EXT-WH_002-BG_A"
+        },
+        {
+            "name": "Wheel Type 3",
+            "folder": "EXT-WH_003-BG_A"
+        },
+        {
+            "name": "Wheel Type 4",
+            "folder": "EXT-WH_004-BG_A"
+        },
+        {
+            "name": "Wheel Type 5",
+            "folder": "EXT-WH_005-BG_A"
+        },
+        {
+            "name": "Wheel Type 6",
+            "folder": "EXT-WH_006-BG_A"
+        },
+        {
+            "name": "Wheel Type 7",
+            "folder": "EXT-WH_007-BG_A"
+        },
+        {
+            "name": "Wheel Type 8",
+            "folder": "EXT-WH_008-BG_A"
+        },
+        {
+            "name": "Wheel Type 9",
+            "folder": "EXT-WH_009-BG_A"
+        },
+        {
+            "name": "Wheel Type 10",
+            "folder": "EXT-WH_010-BG_A"
+        }
+    ],
+    "spoilers": [
+        {
+            "name": "Front Spoiler",
+            "folder": "EXT-J_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rare Upper Spolier",
+            "folder": "EXT-A_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rare Under Spoiler",
+            "folder": "EXT-L_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Side Spoiler",
+            "folder": "EXT-K_001-BC_${colorCode}",
+            "startingFrom": 1
+        }
+    ],
+    "otherOptions": [
+        {
+            "name": "Parking Sensor",
+            "reference": "parkingSensor",
+            "startingFrom": 1
+        },
+        {
+            "name": "Back Window Chrome",
+            "folder": "EXT-B_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Back Camera",
+            "folder": "EXT-I_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Tinted Glasses",
+            "folder": "EXT-D_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Stylish Fog Light",
+            "folder": "EXT-F_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "No Fog Light",
+            "folder": "EXT-C_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Chrome Break Lights",
+            "folder": "EXT-G_001",
+            "startingFrom": 1
+        }
+    ]
+}

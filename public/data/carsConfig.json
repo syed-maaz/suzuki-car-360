@@ -1,0 +1,32 @@
+[
+    {
+        "id": "baleno",
+        "name": "Baleno",
+        "path": "data/balenoConfig.json"
+    },
+    {
+        "id": "dzire",
+        "name": "Dzire",
+        "path": "data/dzireConfig.json"
+    },
+    {
+        "id": "ertiga",
+        "name": "Ertiga",
+        "path": "data/ertigaConfig.json"
+    },
+    {
+        "id": "jimny",
+        "name": "Jimny",
+        "path": "data/jimnyConfig.json"
+    },
+    {
+        "id": "vitara",
+        "name": "Vitara",
+        "path": "data/vitaraConfig.json"
+    },
+    {
+        "id": "swift",
+        "name": "Swift",
+        "path": "data/swiftConfig.json"
+    }
+]

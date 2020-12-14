@@ -1,0 +1,111 @@
+{
+    "basePath": "images/Ertiga_360_Viewer",
+    "variantStartFrom": 1,
+    "variants": [
+        {
+            "name": "GL",
+            "folder": "GL",
+            "variantStartFrom": 0
+        },
+        {
+            "name": "GLX",
+            "folder": "GLX",
+            "variantStartFrom": 0
+        }
+    ],
+    "colors": [
+        {
+            "name": "Burgundy Red Pearl",
+            "folder": "Burgundy Red Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZLL_000",
+            "colorCode": "ZLL",
+            "colorHash": "#990033",
+            "parkingSensor": "EXT-H_001-BC_ZYR"
+        },
+        {
+            "name": "Cool Black Pearl Metallic",
+            "folder": "Cool Black Pearl Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZBD_000",
+            "colorCode": "ZBD",
+            "colorHash": "#08112f",
+            "parkingSensor": "EXT-H_001-BC_ZTN"
+        },
+        {
+            "name": "Glorious Brown Pearl",
+            "folder": "Glorious Brown Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_WAE_000",
+            "colorCode": "WAE",
+            "colorHash": "#B5651E",
+            "parkingSensor": "EXT-H_001-BC_Z7Q"
+        },
+        {
+            "name": "Magma Gray Metallic",
+            "folder": "Magma Gray Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZYZ_000",
+            "colorCode": "ZYZ",
+            "colorHash": "#ff4e01",
+            "parkingSensor": "EXT-H_001-BC_ZQS"
+        },
+        {
+            "name": "Radiant Red Pearl",
+            "folder": "Radiant Red Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZKB_000",
+            "colorCode": "ZKB",
+            "colorHash": "#ce2029",
+            "parkingSensor": "EXT-H_001-BC_ZZH"
+        },
+        {
+            "name": "Silky Silver Metallic",
+            "folder": "Silky Silver Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_Z2S_000",
+            "colorCode": "Z2S",
+            "colorHash": "#aaa9ad",
+            "parkingSensor": "EXT-H_001-BC_ZHJ"
+        },
+        {
+            "name": "Snow White Pearl",
+            "folder": "Snow White Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZQZ_000",
+            "colorCode": "ZQZ",
+            "colorHash": "#FFFAFA",
+            "parkingSensor": "EXT-H_001-BC_ZAM"
+        }
+    ],
+    "wheels": [
+        {
+            "name": "Wheel Type 1",
+            "folder": "EXT-WH_001-BG_A"
+        },
+        {
+            "name": "Wheel Type 2",
+            "folder": "EXT-WH_002-BG_A"
+        },
+        {
+            "name": "Wheel Type 3",
+            "folder": "EXT-WH_003-BG_A"
+        }
+    ],
+    "spoilers": [],
+    "otherOptions": [
+        {
+            "name": "Parking Sensor",
+            "folder": "EXT-Parking-sensor_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Mud Guard",
+            "folder": "EXT-Mud-Guard_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rare Window Defogger",
+            "folder": "EXT-Rear-window-defogger_003",
+            "startingFrom": 1
+        },
+        {
+            "name": "Roof Rail",
+            "folder": "EXT-Roof-rail_001",
+            "startingFrom": 1
+        }
+    ]
+}

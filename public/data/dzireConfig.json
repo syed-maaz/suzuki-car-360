@@ -1,0 +1,142 @@
+{
+    "basePath": "images/Dzire_360_Viewer",
+    "variantStartFrom": 1,
+    "variants": [
+        {
+            "name": "GL",
+            "folder": "GL",
+            "variantStartFrom": 1
+        },
+        {
+            "name": "GLX",
+            "folder": "GLX",
+            "variantStartFrom": 0
+        }
+    ],
+    "colors": [
+        {
+            "name": "Arctic White Pearl",
+            "folder": "Arctic White Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZHJ_000",
+            "colorCode": "ZHJ",
+            "colorHash": "#ffffff",
+            "parkingSensor": "EXT-H_001-BC_ZYR"
+        },
+        {
+            "name": "Gallant Red Pearl Metallic",
+            "folder": "Gallant Red Pearl Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZZH_000",
+            "colorCode": "ZZH",
+            "colorHash": "#ce2029",
+            "parkingSensor": "EXT-H_001-BC_ZTN"
+        },
+        {
+            "name": "Magma Gray Metallic",
+            "folder": "Magma Gray Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_Z7Q_000",
+            "colorCode": "Z7Q",
+            "colorHash": "#948484",
+            "parkingSensor": "EXT-H_001-BC_Z7Q"
+        },
+        {
+            "name": "Midnight Black Pearl",
+            "folder": "Midnight Black Pearl",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZAM_000",
+            "colorCode": "ZAM",
+            "colorHash": "#000000",
+            "parkingSensor": "EXT-H_001-BC_ZAM"
+        },
+        {
+            "name": "Oxford Blue Pearl Metallic",
+            "folder": "Oxford Blue Pearl Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZYA_000",
+            "colorCode": "ZYA",
+            "colorHash": "#002147",
+            "parkingSensor": "EXT-H_001-BC_ZYA"
+        },
+        {
+            "name": "Sherwood Brown Pearl Metallic",
+            "folder": "Sherwood Brown Pearl Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZYB_000",
+            "colorCode": "ZYB",
+            "colorHash": "#EAE0c8",
+            "parkingSensor": "EXT-H_001-BC_ZYB"
+        },
+        {
+            "name": "Silkey Silver Metallic",
+            "folder": "Silkey Silver Metallic",
+            "fileName": "EXT-GRD_${variantName}-BG_A-BC_ZZP_000",
+            "colorCode": "ZZP",
+            "colorHash": "#aaa9ad",
+            "parkingSensor": "EXT-H_001-BC_ZZP"
+        }
+    ],
+    "wheels": [
+        {
+            "name": "Wheel Type 1",
+            "folder": "EXT-WH_001-BG_A"
+        },
+        {
+            "name": "Wheel Type 2",
+            "folder": "EXT-WH_002-BG_A"
+        },
+        {
+            "name": "Wheel Type 3",
+            "folder": "EXT-WH_003-BG_A"
+        }
+    ],
+    "spoilers": [
+        {
+            "name": "Front Spoiler",
+            "folder": "EXT-FrontUnderSplitSpoiler_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rare Under Spoiler",
+            "folder": "EXT-RearUnderSplitSpoiler_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Side Spoiler",
+            "folder": "EXT-SideUnderbodySpoiler_001-BC_${colorCode}",
+            "startingFrom": 1
+        }
+    ],
+    "otherOptions": [
+        {
+            "name": "Side Moulding",
+            "folder": "EXT-BodySideMoulding_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Fog Lamps",
+            "folder": "EXT-FogLamps_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "LED Headlamp",
+            "folder": "EXT-LEDheadlampwithDRL_001",
+            "startingFrom": 1
+        },
+        {
+            "name": "Over Turn Signal Lamp",
+            "folder": "EXT-OrvmTurnSignalLamp_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Parking Sensor",
+            "folder": "EXT-ParkingSensors_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rare Fog Lamp",
+            "folder": "EXT-RearFogLamps_001-BC_${colorCode}",
+            "startingFrom": 1
+        },
+        {
+            "name": "Rere View Camera",
+            "folder": "EXT-RearviewCamera_001",
+            "startingFrom": 1
+        }
+    ]
+}
