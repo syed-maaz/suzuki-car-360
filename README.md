@@ -3,6 +3,8 @@
 # Link:
 http://suzuki_prerelease_1100.surge.sh/
 
+![alt text](https://raw.githubusercontent.com/syed-maaz/suzuki-car-360/master/public/images/reference_image_dzire.png?token=ABVWQIDXGOIIXMJWCPJF5BC724IB4)
+
 # Functionality 
 ## Exterior
 1. 360 view of car
