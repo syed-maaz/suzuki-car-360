@@ -63,6 +63,8 @@ const CarExteriorComponent = (props) => {
       setRender(render + 1);
 
       calculateNumOfComp({ ...carState });
+
+      localStorage.setItem("carState", carState);
     }
   }, [carState]);
 
