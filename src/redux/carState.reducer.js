@@ -119,8 +119,8 @@ const INITIAL_STATE = {
  * @param {*} action
  */
 const reducer = (state = INITIAL_STATE, action) => {
-  console.log("state", action.type);
-  console.log(state);
+  // console.log("state", action.type);
+  // console.log(state);
   switch (action.type) {
     case UPDATE_VARIANT:
       return {
@@ -159,7 +159,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case UPDATE_SIDE_SPOILER:
-      console.log(action.value);
+      // console.log(action.value);
       return {
         ...state,
         sideSpoiler: action.value,

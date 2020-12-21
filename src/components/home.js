@@ -39,7 +39,7 @@ const HomePageComponent = (props) => {
     const carsConfig = await loadCarsConfig();
     // Check if carName (url param) is in carsConfig. Otherwise throw error
     const carMeta = carsConfig.find((d) => d.id === carName);
-    console.log(carMeta);
+    // console.log(carMeta);
     if (!carMeta) {
       console.error(
         "incorrect car is given in parameter or car is missing in carConfig.json"

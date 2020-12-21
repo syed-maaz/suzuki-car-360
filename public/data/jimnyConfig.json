@@ -88,9 +88,10 @@
     ],
     "otherOptions": [
         {
-            "name": "Back Window Chrome",
+            "name": "Back Tire",
             "folder": "EXT-B_001",
-            "startingFrom": 1
+            "startingFrom": 1,
+            "defaultVisible": true
         },
         {
             "name": "Front Bumper",

@@ -114,7 +114,7 @@ const ImageRendererComponent = (props) => {
         let angle = an;
         angle = parseInt(angle) + parseInt(spoilers[item].startingFrom);
         angle = ("0" + angle).slice(-2);
-        console.log(spoilers[item]);
+        // console.log(spoilers[item]);
         const folder = fillTemplate(`${spoilers[item].folder}`, {
           colorCode: color.colorCode,
         });
@@ -192,44 +192,13 @@ const ImageRendererComponent = (props) => {
         onLoad={(e) => setIsWheelLoading(false)}
         className="w-full absolute left-0 bottom-0"
       />
-      {/* {!!rareUpperSpoiler ? (
-        <img
-          src={getRareSpoilertSrc(i)}
-          onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
-          className="w-full absolute left-0 bottom-0"
-        />
-      ) : (
-        " "
-      )}
-      {!!rareUnderSpoiler ? (
-        <img
-          src={getRareUnderSpoilertSrc(i)}
-          onLoad={(e) => setLoadedNumComp(loadedNumComp + 1)}
-          className="w-full absolute left-0 bottom-0"
-        />
-      ) : (
-        " "
-      )}
-      {!!sideSpoiler ? (
-        <img
-          src={getSideSpoilertSrc(i)}
-          onLoad={(e) => setLoadedNumComp(false)}
-          className="w-full absolute left-0 bottom-0"
-        />
-      ) : (
-        " "
-      )}
-      {!!frontSpoiler ? (
-        <img
-          src={getFrontSpoilertSrc(i)}
-          onLoad={(e) => setLoadedNumComp(false)}
-          className="w-full absolute left-0 bottom-0"
-        />
-      ) : (
-        " "
-      )} */}
+
       {renderSpoilers(i)}
       {renderOtherOption(i)}
+      <div
+        id="isSpecSheet"
+        onClick={(e) => localStorage.setItem("isSpecSheet", true)}
+      ></div>
     </div>
   );
 };

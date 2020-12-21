@@ -24,7 +24,7 @@ import Iframe from "react-iframe";
 
 const BottomNavigationComponent = (props) => {
   const { config } = props;
-  console.log(config);
+
   // const { config } = useSelector((state) => state.config);
   const { carState } = useSelector((state) => state);
 
@@ -69,6 +69,11 @@ const BottomNavigationComponent = (props) => {
     }
     if (!!config && !!config.otherOptions) {
       setOtherOptions(config.otherOptions);
+      config.otherOptions.forEach((op) => {
+        if (!!op.defaultVisible) {
+          updateOtherOptions(op);
+        }
+      });
     }
     if (!!config && !!config.spoilers) {
       setSpoilers(config.spoilers);
@@ -112,7 +117,7 @@ const BottomNavigationComponent = (props) => {
     donutData.datasets = new Array(datasets);
 
     setDonutData(donutData);
-    console.log(donutData);
+    // console.log(donutData);
   };
 
   const updateOtherOptions = (op) => {
@@ -148,7 +153,7 @@ const BottomNavigationComponent = (props) => {
   };
 
   const renderColorDonut = (donutData) => {
-    console.log(donutData);
+    // console.log(donutData);
     return (
       <>
         <Doughnut
@@ -183,7 +188,7 @@ const BottomNavigationComponent = (props) => {
 
   return (
     <nav className="absolute w-full inset-x-0 bottom-0 md:mb-8 md:mb-16 md:flex md:items-center md:justify-center">
-      <Modal show={show} onHide={handleClose} size="xl">
+      <Modal id="interior-modal" show={show} onHide={handleClose} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Interior</Modal.Title>
         </Modal.Header>
@@ -302,6 +307,7 @@ const BottomNavigationComponent = (props) => {
                     </a>
                   </li>
                 ))}
+              {!spoilers.length ? <li>No Spoilers</li> : ""}
             </ul>
           </div>
         </li>
@@ -334,26 +340,28 @@ const BottomNavigationComponent = (props) => {
               </li>
               {!!otherOptions.length &&
                 otherOptions.map((d, i) => (
-                  <li key={i} onClick={(e) => updateOtherOptions(d)}>
-                    {isOptionActive(d.name) ? (
-                      <>
-                        <i
-                          className="fas fa-check-circle"
-                          style={{ color: "green" }}
-                        ></i>{" "}
-                      </>
-                    ) : (
-                      " "
-                    )}
-                    <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                      }}
-                    >
-                      {d.name}
-                    </a>
-                  </li>
+                  <>
+                    <li key={i} onClick={(e) => updateOtherOptions(d)}>
+                      {isOptionActive(d.name) ? (
+                        <>
+                          <i
+                            className="fas fa-check-circle"
+                            style={{ color: "green" }}
+                          ></i>{" "}
+                        </>
+                      ) : (
+                        " "
+                      )}
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                        }}
+                      >
+                        {d.name}
+                      </a>
+                    </li>
+                  </>
                 ))}
             </ul>
           </div>

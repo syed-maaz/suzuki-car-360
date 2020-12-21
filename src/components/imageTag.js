@@ -7,7 +7,6 @@ const ImageTag = (props) => {
 
   useEffect(() => {
     setLoadState(loadState + 1);
-    console.log("change");
   }, [imgSrc]);
 
   return (
