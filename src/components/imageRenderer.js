@@ -197,6 +197,7 @@ const ImageRendererComponent = (props) => {
       {renderOtherOption(i)}
       <div
         id="isSpecSheet"
+        className={`car_${props.carName}`}
         onClick={(e) => localStorage.setItem("isSpecSheet", true)}
       ></div>
     </div>

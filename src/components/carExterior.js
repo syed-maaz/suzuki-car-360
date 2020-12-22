@@ -107,6 +107,7 @@ const CarExteriorComponent = (props) => {
             startingFrom={startingFrom}
             render={render}
             spoilers={spoilers}
+            carName={props.carName}
           />
         ))}
       </div>

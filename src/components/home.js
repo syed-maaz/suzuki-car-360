@@ -136,7 +136,7 @@ const HomePageComponent = (props) => {
                 handleMouseMove(e, 5);
               }}
             >
-              <CarExteriorComponent />
+              <CarExteriorComponent carName={carName} />
             </div>
             <BottomNavigationComponent config={config} />
           </div>
