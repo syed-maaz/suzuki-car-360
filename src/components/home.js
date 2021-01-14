@@ -112,12 +112,16 @@ const HomePageComponent = (props) => {
     }
   };
 
+  const getBackgroundImg = () => {
+    return (config && `${config.basePath}/background.jpg`) || "";
+  };
+
   return (
     <>
       <div className="App">
         <div className="bg">
           <div className="wrapper relative">
-            <img src={backgroundImg} className="w-full" alt="cover" />
+            <img src={getBackgroundImg()} className="w-full" alt="cover" />
             <div
               className="absolute inset-0"
               onTouchStart={(e) => handleMouseDown(e)}
