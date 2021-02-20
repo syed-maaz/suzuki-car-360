@@ -188,7 +188,13 @@ const BottomNavigationComponent = (props) => {
 
   return (
     <nav className="absolute w-full inset-x-0 bottom-0 md:mb-8 md:mb-16 md:flex md:items-center md:justify-center">
-      <Modal id="interior-modal" show={show} onHide={handleClose} size="xl">
+      <Modal
+        id="interior-modal"
+        show={show}
+        onHide={handleClose}
+        size="xl"
+        style={{ zIndex: "9999" }}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Interior</Modal.Title>
         </Modal.Header>
