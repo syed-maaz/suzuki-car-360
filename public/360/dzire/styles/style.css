@@ -1,0 +1,42 @@
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+caption,
+form,
+fieldset,
+input,
+textarea,
+select,
+pre,
+address,
+blockquote,
+embed,
+object {
+  margin: 0px;
+  padding: 0px;
+  background-position: 0 0;
+}
+
+#interiorStage {
+  width: 100%;
+  height: 100vh;
+}
+
+#interiorStage {
+  background-color: #f4f4f4;
+  /* display: none; */
+  overflow: hidden;
+  position: relative;
+}

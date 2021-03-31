@@ -66,7 +66,9 @@ const HomePageComponent = (props) => {
     props.updateBasePath(config.basePath);
     props.updateVariantAction(config.variants[0]);
     props.updateColorAction(config.colors[0]);
-    props.updateWheelAction(config.wheels[0]);
+    props.updateWheelAction(
+      config.variants[0].defaultWheelType || config.wheels[0]
+    );
     props.updateVariantStartFrom(config.variantStartFrom);
     // props.updateSpoilers(config.spoilers);
     setConfig(config);
@@ -142,7 +144,7 @@ const HomePageComponent = (props) => {
             >
               <CarExteriorComponent carName={carName} />
             </div>
-            <BottomNavigationComponent config={config} />
+            <BottomNavigationComponent carName={carName} config={config} />
           </div>
         </div>
       </div>

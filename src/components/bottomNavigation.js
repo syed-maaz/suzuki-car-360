@@ -23,7 +23,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Iframe from "react-iframe";
 
 const BottomNavigationComponent = (props) => {
-  const { config } = props;
+  const { config, carName } = props;
 
   // const { config } = useSelector((state) => state.config);
   const { carState } = useSelector((state) => state);
@@ -200,7 +200,7 @@ const BottomNavigationComponent = (props) => {
         </Modal.Header>
         <Modal.Body>
           <Iframe
-            url="http://suzuki-360-1100.surge.sh/"
+            src={`/360/${carName}`}
             width="100%"
             height="600px"
             id="myId"
@@ -224,7 +224,15 @@ const BottomNavigationComponent = (props) => {
             <ul>
               {!!variants.length &&
                 variants.map((d, i) => (
-                  <li key={i} onClick={(e) => props.updateVariantAction(d)}>
+                  <li
+                    key={i}
+                    onClick={(e) => {
+                      props.updateVariantAction(d);
+                      // console.log(d.defaultWheelType);
+                      d.defaultWheelType &&
+                        props.updateWheelAction(d.defaultWheelType);
+                    }}
+                  >
                     {cVariant.name === d.name ? (
                       <>
                         <i

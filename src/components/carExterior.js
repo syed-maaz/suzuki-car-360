@@ -33,7 +33,6 @@ const CarExteriorComponent = (props) => {
 
   useEffect(() => {
     if (!!carState) {
-      // console.log(carState);
       if (!!carState.angle) {
         setAngle(carState.angle);
       }

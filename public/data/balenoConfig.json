@@ -5,12 +5,20 @@
         {
             "name": "GL",
             "folder": "GL base",
-            "variantStartFrom": 0
+            "variantStartFrom": 0,
+            "defaultWheelType": {
+                "name": "Wheel Type 3",
+                "folder": "EXT-WH_003-BG_A"
+            }
         },
         {
             "name": "GLX",
             "folder": "GLX base",
-            "variantStartFrom": 0
+            "variantStartFrom": 0,
+            "defaultWheelType": {
+                "name": "Wheel Type 2",
+                "folder": "EXT-WH_002-BG_A"
+            }
         }
     ],
     "colors": [
