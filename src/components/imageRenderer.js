@@ -122,7 +122,12 @@ const ImageRendererComponent = (props) => {
         src = `${basePath}/${folder}/${folder}_${angle}.png`;
 
         return (
-          <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
+          <img
+            key={i}
+            src={src}
+            className="w-full absolute left-0 bottom-0"
+            style={{ zIndex: 3 }}
+          />
         );
       });
     }
@@ -150,7 +155,12 @@ const ImageRendererComponent = (props) => {
           src = `${basePath}/${folder}/${folder}_${angle}.png`;
         }
         return (
-          <img key={i} src={src} className="w-full absolute left-0 bottom-0" />
+          <img
+            key={i}
+            src={src}
+            className="w-full absolute left-0 bottom-0"
+            style={{ zIndex: 3 }}
+          />
         );
       });
     }
@@ -180,6 +190,8 @@ const ImageRendererComponent = (props) => {
         src={getVariantSrc(i)}
         onLoad={(e) => setIsVariantLoading(false)}
         className="w-full absolute left-0 bottom-0"
+        z-index="1"
+        style={{ zIndex: 1 }}
       />
       {/* <ImageTag imgSrc={getVariantSrc(i)}></ImageTag> */}
       <img
@@ -191,6 +203,7 @@ const ImageRendererComponent = (props) => {
         src={getWheeltSrc(i)}
         onLoad={(e) => setIsWheelLoading(false)}
         className="w-full absolute left-0 bottom-0"
+        style={{ zIndex: 2 }}
       />
 
       {renderSpoilers(i)}
